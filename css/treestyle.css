@@ -1,0 +1,40 @@
+.treelayout{		
+	font-family: Garamond;
+	font-size: 1.1em
+}
+
+ul.tree li {
+	list-style-type: none;
+	position: relative;
+}
+
+ul.tree li ul {
+	display: none;
+}
+
+ul.tree li.open > ul {
+	display: block;
+}
+
+ul.tree li a {
+	color: black;
+	text-decoration: none;
+}
+
+ul.tree li a:before {
+	height: 1em;
+	padding: 0.1em;
+	font-size: .8em;
+	display: block;
+	position: absolute;
+	left: -1.3em;
+	top: .2em;
+}
+
+ul.tree li > a:not(:last-child):before {
+	content: '+';
+}
+
+ul.tree li.open > a:not(:last-child):before {
+	content: '-';
+}
