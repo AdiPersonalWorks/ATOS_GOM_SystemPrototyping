@@ -16,6 +16,7 @@
 	  <script>
 		pico.load("pytodatabase");
 	  </script>
+	  <script type="text/javascript" src="sessvars.js"></script>
   
 </head>
 
@@ -39,19 +40,20 @@
   <div class="form">
     <h2>Login to your account</h2>
     <form>
-      <input type="text" id="usernametext" placeholder="Username"/>
-      <input type="password" id = "passtext" placeholder="Password"/>
-      <button onclick="f_login()">Login</button>
+      <input type="text" id="usernametext" placeholder="Username" required/>
+      <input type="password" id = "passtext" placeholder="Password" required/>
+      <button onclick="LoginCheck()">Login</button>
     </form>
   </div>
   <div class="form">
     <h2>Create an account</h2>
     <form>
-      <input type="text" id="username" placeholder="Username"/>
-      <input type="password" id="password" placeholder="Password"/>
-      <input type="email" id="email" placeholder="Email Address"/>
-      <input type="tel" id="phone" placeholder="Phone Number"/>
-      <input type="submit" class="btn btn-info" id="simplepost" value = "Register" onclick="RegistoDB()"></input>
+      <input type="text" id="username" placeholder="Username" required/>
+      <input type="password" id="password" placeholder="Password"required/>
+      <input type="email" id="email" placeholder="Email Address" required/>
+      <input type="text" id="dept" placeholder="Department" required/>
+	  <button onclick="RegistoDB()">Register</button>
+      <!--<input type="submit" class="btn btn-info" id="simplepost" value = "Register" onclick="RegistoDB()"></input>-->
     </form>
   </div>
   <div class="cta"><a href="ForgotPassword.html">Forgot your password?</a></div>
@@ -63,19 +65,64 @@
 <script src='http://codepen.io/andytran/pen/vLmRVp.js'></script>
 <script src="js/index.js"></script>
 
+<!--Registration Script-->
 <script type="text/javascript">
-
 function RegistoDB()
 	{
 		var UID = document.getElementById("username").value;
 		var Pass = document.getElementById("password").value;
 		var email = document.getElementById("email").value;
-		var phone = document.getElementById("phone").value;
+		var dept = document.getElementById("dept").value;
 		
-        pytodatabase.RegisDB(UID,Pass,email,phone,function(response){
+		if (UID==null || UID=="" || Pass==null || Pass=="" || email==null || email=="" || dept==null || dept=="")
+		{
+			//alert("Please fill all the required fields");
+			return false;
+		}
+		
+        pytodatabase.RegisDB(UID,Pass,email,dept,function(response){
+			if (response == "y"){alert('User Registered Successfully')}
+			else{window.setTimeout(alert('Username already exists. Please try again.'),5000)}
+			
 			document.getElementById('message').innerHTML = response;  
-		});        
+		});	
 	}
+</script>
+
+<!--Login page Script-->
+<script>
+function LoginCheck()
+	{
+		var UID = document.getElementById("usernametext").value;
+		var Pass = document.getElementById("passtext").value;
+		
+		if (UID==null || UID=="" || Pass==null || Pass=="")
+		{
+			//alert("Please fill all the required fields");
+			return false;
+		}
+		
+		else
+		{
+		console.log("I'm in else")
+		pytodatabase.Login_Validate(UID,Pass,function(resp){
+			console.log(resp)
+			if (resp=="y")
+			{
+				alert("Login validated");
+				sessvars.myObj = {name: UID};
+				window.location.href = "HomePage_AfterLogin.html";
+			}
+			else {
+				console.log("wrong in else")
+				alert("Invalid login credentials. Please retry");
+			}
+			
+			/*document.getElementById('message').innerHTML = resp;*/
+			});
+		}
+	}
+
 </script>
 </body>
 </html>

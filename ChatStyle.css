@@ -1,0 +1,151 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  -ms-overflow-style: scrollbar;
+  overflow-style: scrollbar;
+  background-color: #DDD;
+}
+
+main {
+  max-width: 700px;
+  margin: auto;
+  height: 100vh;
+  background-color: #DDD;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 500px
+}
+
+.chat-box-container {
+  margin: 0;
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  height: 0;
+}
+
+.chat-box-header {
+  display: block;
+  text-align: center;
+}
+
+.chat-box {
+  margin: 4px 4px 4px 4px;
+  border: 2px solid black;
+  flex-grow: 1;
+  background-color: #FFF;
+  overflow-y: scroll;
+}
+
+.chat-box p {
+  margin: 0;
+  padding: 6px;
+  font-size: 16px;
+}
+
+.ai-person-container {
+  display: block;
+  overflow: auto;
+}
+
+.ai,
+.person {
+  overflow: auto;
+  margin: 4px;
+  border: 2px solid black;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.ai {
+  text-align: left;
+  margin-right: 36px;
+  border-color: red;
+  float: left;
+  border-bottom-left-radius: 0px;
+}
+
+.person {
+  text-align: left;
+  margin-left: 36px;
+  border-color: blue;
+  float: right;
+  border-bottom-right-radius: 0px;
+}
+
+.ai-date,
+.person-date {
+  font-size: 10px;
+  clear: both;
+}
+
+.ai-date {
+  float: left;
+  margin-left: 6px;
+}
+
+.person-date {
+  float: right;
+  margin-right: 6px;
+}
+
+.chat-input-container {
+  position: relative;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+}
+
+.chat-input {
+  height: 40px;
+  width: auto;
+  display: inline-block;
+  flex-grow: 1;
+  padding: 2px 2px 2px 2px;
+  margin: 0 4px 0 4px;
+  font-size: 32px;
+  border: 2px solid black;
+}
+
+.chat-input:focus {
+  outline: 0;
+}
+
+.chat-submit {
+  width: 70px;
+  height: 47px !important;
+  padding: 2px 2px 2px 2px;
+  margin-right: 4px;
+  border: 2px solid black;
+  background-color: #69AAFF;
+  font-size: 18px;
+}
+
+.chat-submit:hover {
+  cursor: pointer;
+  background-color: #80BBFF;
+}
+
+.chat-submit:focus {
+  outline: 0;
+}
+
+@media screen and (max-width: 480px) {
+  .chat-box p {
+    font-size: 30px;
+  }
+  .chat-input {
+    width: 60%;
+    float: left;
+    font-size: 28px;
+  }
+  .chat-submit {
+    float: right;
+  }
+}

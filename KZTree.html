@@ -27,17 +27,11 @@
 	
 	<link href="css/treestyle.css" rel="stylesheet" type="text/css">
 	
-	  <script type="text/javascript" src="/pico/client.js"></script>
-	  <script>
-		pico.load('KnowZoneDB')
-	  </script>
+	<script type="text/javascript" src="/pico/client.js"></script>
+	<script>pico.load('KnowZoneDB')</script>
 </head>
 
 <body>
-  <!-- =========================
-    //////////////This Theme Design and Developed //////////////////////
-    //////////// by www.wpfreeware.com======================--> 
-
   <!-- Preloader -->
   <div id="preloader">
     <div id="status">&nbsp;</div>
@@ -63,16 +57,16 @@
         <ul class="nav navbar-nav navbar-right custom_nav">
           <li><a href="HomePage.html">Home</a></li>
 		  <li class="active">
-			<a href="#" class = "active" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Knowledge Zone<span class="caret"></span></a>
+			<a data-target="KZTree.html" href="KZTree.html" class="dropdown-toggle">Knowledge Zone<span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
-              <li><a href="KnowledgeManagement.html">Knowledge Manager</a></li>            
+              <li><a href="KnowledgeManager.html">Knowledge Manager</a></li>            
             </ul>
           </li>
-          <li><a href="Training.html">Training</a></li>  
+          <li><a>Training</a></li>  
 		  <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Support<span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
-              <li><a href="#">FAQ</a></li>
+              <li><a href="ChatUI.html">FAQ</a></li>
               <li><a href="#">Forums</a></li>
               <li><a href="ContactUs.html">Contact Us</a></li>               
             </ul>
@@ -182,9 +176,9 @@ background-image: "img/slider/3.jpg"
 			  </li>
 			</ul>			
 		  </li>
-	  <li><a onclick="liclicked(this.id)" id="Medtech"><b>Medtech</b></a></li>
-	  <li><a onclick="liclicked(this.id)" id="Offshore"><b>Offshore</b></a></li>
-	  <li><a onclick="liclicked(this.id)" id="Precision Engineering"><b>Precision Engineering</b></a></li>
+		  <li class="nodep2"><a onclick="liclicked(this.id)" id="Medtech"><b>Medtech</b></a></li>
+		  <li class="nodep2"><a onclick="liclicked(this.id)" id="Offshore"><b>Offshore</b></a></li>
+		  <li class="nodep2"><a onclick="liclicked(this.id)" id="Precision Engineering"><b>Precision Engineering</b></a></li>
 	</ul>
   </li>
 </li> 
@@ -204,9 +198,10 @@ background-image: "img/slider/3.jpg"
   <div style="width:700px;height:500px;overflow-y: scroll;border:1.5px solid #223;" class="panel-body fixed-panel">
 <!--</div>-->
 <h3><b><center><a id='KZHeading'>KNOWLEDGE ZONE</a></center></b></h3>
-<center><img  style="width:600px;height:200px" src="img/KnowledgeHeader.png" align="middle"></center><br>
+<center><img  id="KZHeadingImg" style="width:600px;height:200px" src="img/KnowledgeHeader.png" align="middle"></center><br>
 
-<p id="para1">
+<h4><b>Description</b></h4>
+<p style="text-align:justify" id="para1">
 The knowledge zone houses knowledge in the form of text, images, videos gathered from various sources such as journals, articles, interviews with experts and so on.
 
 The panel on the left is a heirarchy of all the knowledge points which are present in this knowledge repository. Clicking on each one will display the content, contained within each of the knowledge point, in this window.
@@ -215,7 +210,8 @@ In case of any issues please get in contact with the support team.
 
 </p>
 
-<p id="para2">
+<h4><b>Procedure</b></h4>
+<p style="text-align:justify" id="para2">
 The knowledge zone houses knowledge in the form of text, images, videos gathered from various sources such as journals, articles, interviews with experts and so on.
 
 The panel on the left is a heirarchy of all the knowledge points which are present in this knowledge repository. Clicking on each one will display the content, contained within each of the knowledge point, in this window.
@@ -287,7 +283,7 @@ In case of any issues please get in contact with the support team.
                   <ul>
                     <li><a href="ContactUs.html">Support</a></li>
                     <li><a>Blog</a></li>
-                    <li><a>FAQ</a></li>
+                    <li><a href="ChatUI.html">FAQ</a></li>
                     <li><a href="Testimonials.html">Testimonial Archive</a></li>
                     <li><a>Careers</a></li>
                     <li><a>Developer API</a></li>
@@ -324,11 +320,12 @@ In case of any issues please get in contact with the support team.
 <script>
 function liclicked(str)
 {
-KnowZoneDB.KZDB(str,function(response){
-			document.getElementById('para1').innerHTML = response[0];
-			document.getElementById('para2').innerHTML = response[1];			
-		});
-document.getElementById('KZHeading').innerHTML = str;	
+	KnowZoneDB.KZDB(str,function(response){
+				document.getElementById('para1').innerHTML = response[0];
+				document.getElementById('para2').innerHTML = response[1];
+				document.getElementById('KZHeadingImg').src = response[2];			
+			});
+	document.getElementById('KZHeading').innerHTML = str;	
 }
 
 
