@@ -37,8 +37,6 @@
   src="https://code.jquery.com/jquery-3.1.1.min.js"
   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
   crossorigin="anonymous"></script>
-
-
 </head>
 
 <body style="background-image: url(&quot;img/Scanbox_149.jpg&quot;); overflow: visible;" preloader"="">
@@ -216,20 +214,20 @@
 
 <body>
 
-<div class="form-style-10" enctype="application/json" class="Element-inputs" id="submitform">
+<div class="form-style-10" >
 <h1>Add New Element<span>Add your new knowledge point here</span></h1>
-<form>
+<form action= "preview.php" method="post" id="submitform">
     <div class="section" id= "descriptor-name"><span>1</span>Descriptor Name</div>
     <div class="inner-wrap" id = descriptor-name-inner>
-         <input type="text" name="descriptor-name" value ="Enter the descriptor name here" style="color: grey;">
-    
-    <div class="section" id="status"><span>2</span>Status</div>
-      <div class="inner-wrap" name="status-inner"> New </div>
+         <input type="text" name="descriptor-name" value ="Enter the descriptor name here" required style="color: grey;">
+    </div>
+    <div class="section" id= "status-inner"><span>2</span>Status</div>
+      <div class="inner-wrap"> New </div>
 
      <div class="section " id = "knowledge-source"><span>3</span>Knowledge Source</div>
                               
        <div class="inner-wrap" id ="knowledge-source-inner"> 
-                                <select name="source-selector" ID="source-selector" class="field-select">
+                                <select name="source-selector" ID="source-selector" class="field-select" required>
         
                                    <option value="Select"><label>Select</label></option>
                                    <option value="Experience"><label>Experience</label></option>
@@ -238,20 +236,20 @@
                                    <option value="Others"><label>Others</label></option>
         
                                 </select>
-                                 <div ><input type="text" ID="knowledge-source-input" name="knowledge-source-input" value ="If others please mention here" style="color: grey;">
+                                 <div ><input type="text" ID="knowledge-source-input" name="knowledge-source-input" value ="Other Knowledge Sources"  required style="color: grey;">
                                  </div>
 
     
                                   </div>
         
     <div class="section" id= "keywords"><span>4</span>Keywords</div>
-    <div class="inner-wrap" id= "keywords">
-         <input type="text" name="keywords-inner" value ="Enter the keywords here" style="color: grey;">
+    <div class="inner-wrap" id= "keywords-inner">
+         <input type="text" name="keywords" value ="Enter the keywords here" required style="color: grey;">
     </div>
 
         
         <div class= "section" id = "description"><span>5</span> Description</div>
-        <div class="inner-wrap" id = "description-inner"><textarea name="Description"></textarea>
+        <div class="inner-wrap" id = "description-inner"><textarea name="description"></textarea>
     </div>
     
 
@@ -259,12 +257,61 @@
     <input type= "button" value="Images"/>
     <input type= "button" value="Audio"/>
     <input type= "button" value="Video"/>
-    <input name="preview" type = "button" class="preview" value="Preview" onclick="onSubmit()"/>
+    <input type= "submit" value="Preview"/>
     </div>
 </form>
 </div>
 
-    
+    <script>
+     /* new AnimOnScroll( document.getElementById( 'grid' ), {
+        minDuration : 0.4,
+        maxDuration : 0.7,
+        viewportFactor : 0.2
+      } );*/
+        
+        
+        (function($){
+    $.fn.serializeObject = function(){
+
+        var arrayData, objectData;
+  arrayData = this.serializeArray();
+  objectData = {};
+
+  $.each(arrayData, function() {
+    var value;
+
+    if (this.value != null) {
+      value = this.value;
+    } else {
+      value = '';
+    }
+
+    if (objectData[this.name] != null) {
+      if (!objectData[this.name].push) {
+        objectData[this.name] = [objectData[this.name]];
+      }
+
+      objectData[this.name].push(value);
+    } else {
+      objectData[this.name] = value;
+    }
+  });
+
+  return objectData;
+    };
+})(jQuery);
+        
+        
+        
+        
+        function onSubmit(){
+          var data = JSON.stringify( $('#submitform').serializeObject() ); //  <-----------
+          console.log("Hello");
+          console.log( data );
+          return false; //don't submit
+        }
+</script>
+
   <!-- start special quote -->
  
   <!-- End special quote -->
@@ -341,68 +388,6 @@
   </footer>
   <!-- End footer -->
   
-
-    <script>
-     /* new AnimOnScroll( document.getElementById( 'grid' ), {
-        minDuration : 0.4,
-        maxDuration : 0.7,
-        viewportFactor : 0.2
-      } );*/
-        
-     
-  src="https://code.jquery.com/jquery-3.1.1.min.js"
-  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-  crossorigin="anonymous">
-
-   
-    (function($){
-    $.fn.serializeObject = function(){
-
-        var arrayData, objectData;
-  arrayData = this.serializeArray();
-  objectData = {};
-
-  $.each(arrayData, function() {
-    var value;
-
-    if (this.value != null) {
-      value = this.value;
-    } else {
-      value = '';
-    }
-
-    if (objectData[this.name] != null) {
-      if (!objectData[this.name].push) {
-        objectData[this.name] = [objectData[this.name]];
-      }
-
-      objectData[this.name].push(value);
-    } else {
-      objectData[this.name] = value;
-    }
-  });
-
-  return objectData;
-    };
-})(jQuery);
-        
-        
-        
-        
-        function onSubmit(){
-          var data = JSON.stringify( $('#submitform').serializeObject() ); //  <-----------
-
-          console.log( data );
-          return false; //don't submit
-        }
-        
-    </script>  
-
-        
-        
-        
-       
-</script>
 
 
 <!-- jQuery Library -->
