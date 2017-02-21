@@ -27,28 +27,32 @@ def RegisDB(UID,Pass,email,phone):
           
 # Login Validation
 def Login_Validate(UID,Pass):
-	print(UID)
-	print(Pass)
-	conn = sqlite3.connect('Databases/SMART.db')
-	cursor = conn.cursor()
+        users = []
+        passwords = []
+        conn = sqlite3.connect('Databases/SMART.db')
+        cursor = conn.cursor()
 
-	cursor.execute('SELECT * FROM SMART_Registrations WHERE Username=? AND Password=?',
-						((UID),(Pass)))
-	time.sleep(10)
-	retlen = len(cursor.fetchall())
-	print(retlen)
-	#time.sleep(5)
-	if retlen>0:
-			conn.close()
-			#time.sleep(2)
-			time.sleep(10)
-			return "y"  
-			
-	else:
-			conn.close()
-			#time.sleep(2)
-			time.sleep(10)
-			return "n"
+        cursor.execute('SELECT Username,Password FROM SMART_Registrations')
 
-#message = Login_Validate('adityaexpert','adityaexpert123')
-#print message
+        all_usernames = cursor.fetchall()
+        print all_usernames
+        for user in all_usernames:
+                users.append(str(user[0]))
+                passwords.append(str(user[1]))
+
+        try:
+                index = users.index(UID)
+                print index
+                if Pass == passwords[index]:
+                        print 'Password matched'
+                        return 1
+                else:
+                        return 0
+        except:
+                #time.sleep(5)
+                return 0
+	
+        conn.close()
+
+##message = Login_Validate('adityaexpert','adityaexpert')
+##print message

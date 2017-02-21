@@ -1,61 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SMART - Contact Us</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SMART - Contact Us</title>
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- for fontawesome icon css file -->
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <!-- superslides css -->
-    <link rel="stylesheet" href="css/superslides.css">
-    <!-- for content animate css file -->
-    <link rel="stylesheet" href="css/animate.css">    
-    <!-- slick slider css file -->
-    <link href="css/slick.css" rel="stylesheet">        
-    <!-- website theme color file -->   
-    <link id="switcher" href="css/themes/cyan-theme.css" rel="stylesheet">   
-    <!-- main site css file -->    
-    <link href="style.css" rel="stylesheet">
-    <!-- google fonts  -->  
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>    
-    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<!-- for fontawesome icon css file -->
+	<link href="css/font-awesome.min.css" rel="stylesheet">
+	<!-- superslides css -->
+	<link rel="stylesheet" href="css/superslides.css">
+	<!-- for content animate css file -->
+	<link rel="stylesheet" href="css/animate.css">    
+	<!-- slick slider css file -->
+	<link href="css/slick.css" rel="stylesheet">        
+	<!-- website theme color file -->   
+	<link id="switcher" href="css/themes/cyan-theme.css" rel="stylesheet">   
+	<!-- main site css file -->    
+	<link href="style.css" rel="stylesheet">
+	<!-- google fonts  -->  
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>    
+	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<script type="text/javascript" src="/pico/client.js"></script>
+	<script>pico.load("QueFedToDB");</script>
+	<script type="text/javascript" src="sessvars.js"></script>
+	
 
-  <!-- <script src="js/sequencejs-options.apple-style.js"></script> -->
-  
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
   </head>
 <body>
-
-	<script language="javascript">
-	function WriteToFile()
-	{
-		var fso = new ActiveXObject("Scripting.FileSystemObject");
-		var s = fso.OpenTextFile("C:\\ContactUSQueries.txt", 8);
-		var text=document.getElementById("desc").innerText;
-		var name = document.getElementById("name").innerText;
-		var email = document.getElementById("email").innerText;
-		var subject = document.getElementById("sub").innerText;
-		s.WriteLine(name);
-		s.WriteLine(email);
-		s.WriteLine(subject);
-		s.WriteLine(text);
-		s.WriteLine('***********************');
-		s.Close();
-	}
-	</script>
-
-				
+			
 
   <!-- Preloader -->
   <div id="preloader">
@@ -82,17 +59,17 @@
         <ul class="nav navbar-nav navbar-right custom_nav">
           <li><a href="HomePage.html">Home</a></li>
 		  <li class="dropdown">
-			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Knowledge Zone<span class="caret"></span></a>
+			<a data-target="KZTree.html" href="KZTree.html" class="dropdown-toggle">Knowledge Zone<span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
-              <li><a href="KnowledgeManagement.html">Knowledge Manager</a></li>            
+              <li><a href="KnowledgeManager.html">Knowledge Manager</a></li>            
             </ul>
           </li>
           <li><a href="Training.html">Training</a></li>  
 		  <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Support<span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
-              <li><a href="#">FAQ</a></li>
-              <li><a href="#">Forums</a></li>
+              <li><a href="ChatUI.html">FAQ</a></li>
+              <li><a href="Forums.html">Forums</a></li>
               <li class="active"><a href="ContactUs.html">Contact Us</a></li>               
             </ul>
           </li>
@@ -124,13 +101,13 @@
             <div class="row">
               <div class="col-lg-6 col-md-6 col-sm-6">
                 <div class="contact_left wow fadeInLeft">
-                  <form id ="suppform" class="submitphoto_form">
+                  <!--<form id ="suppform" class="submitphoto_form">-->
                     <textarea type="text" id="name" class="form-control wpcf7-text" placeholder="Your name"></textarea>
                     <textarea type="mail" id = "email" class="form-control wpcf7-email" placeholder="Email address"></textarea>        
                     <textarea type="text" id = "sub" class="form-control wpcf7-text" placeholder="Subject"></textarea>
                     <textarea class="form-control wpcf7-textarea" id="desc" cols="30" rows="10" placeholder="What would you like to tell us"></textarea>
                     <input type="submit" value="Submit" onclick = "WriteToFile()" class="wpcf7-submit photo-submit">                     
-                  </form>
+
                 </div>                  
               </div>
               <div class="col-lg-6 col-md-6 col-sm-6">
@@ -190,7 +167,7 @@
                   <ul>
                     <li><a href="ContactUs.html">Support</a></li>
                     <li><a>Blog</a></li>
-                    <li><a>FAQ</a></li>
+                    <li><a href="ChatUI.html">FAQ</a></li>
                     <li><a href="Testimonials.html">Testimonial Archive</a></li>
                     <li><a>Careers</a></li>
                     <li><a>Developer API</a></li>
@@ -223,9 +200,33 @@
   </footer>
   <!-- End footer -->
 
+<script language="javascript">
+function WriteToFile()
+{
+	var name = document.getElementById('name').value;
+	var email = document.getElementById('email').value;
+	var sub = document.getElementById('sub').value;
+	var desc = document.getElementById('desc').value;
+	
+	QueFedToDB.QueFedDB(name,email,sub,desc,function(response){
+	
+		if (response==1){
+			alert('Thank you. Your feedback has been successfully submitted !');
+		
+		}
+	
+	
+	
+	});
+	
+	document.getElementById('name').value = '';
+	document.getElementById('email').value = '';
+	document.getElementById('sub').value = '';
+	document.getElementById('desc').value = '';
+	
+}
+</script>
 
-  
- 
   
   <!-- jQuery Library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

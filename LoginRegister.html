@@ -1,22 +1,18 @@
 <!DOCTYPE html>
 <html >
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SMART Login</title>
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-
-  <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
-<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
-
-      <link rel="stylesheet" href="css/style.css">
-	  <script type="text/javascript" src="/pico/client.js"></script>
-	  <script>
-		pico.load("pytodatabase");
-	  </script>
-	  <script type="text/javascript" src="sessvars.js"></script>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SMART Login</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+	<link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
+	<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+	<link rel="stylesheet" href="css/style.css">
+	
+	<script type="text/javascript" src="/pico/client.js"></script>
+	<script>pico.load("pytodatabase");</script>
+	<script type="text/javascript" src="sessvars.js"></script>
   
 </head>
 
@@ -39,11 +35,11 @@
   </div>
   <div class="form">
     <h2>Login to your account</h2>
-    <form>
+    <!--<form method="post" action="">-->
       <input type="text" id="usernametext" placeholder="Username" required/>
       <input type="password" id = "passtext" placeholder="Password" required/>
-      <button onclick="LoginCheck()">Login</button>
-    </form>
+      <input type="submit" value="Login" onclick="LoginCheck()"></input>
+    <!--</form>-->
   </div>
   <div class="form">
     <h2>Create an account</h2>
@@ -94,34 +90,23 @@ function RegistoDB()
 function LoginCheck()
 	{
 		var UID = document.getElementById("usernametext").value;
-		var Pass = document.getElementById("passtext").value;
-		
-		if (UID==null || UID=="" || Pass==null || Pass=="")
-		{
-			//alert("Please fill all the required fields");
-			return false;
-		}
-		
-		else
-		{
-		console.log("I'm in else")
-		pytodatabase.Login_Validate(UID,Pass,function(resp){
-			console.log(resp)
-			if (resp=="y")
+		var Pass = document.getElementById("passtext").value;		
+
+		pytodatabase.Login_Validate(UID,Pass,function(response){
+			if (response==1)
 			{
 				alert("Login validated");
-				sessvars.myObj = {name: UID};
+				sessvars.username = UID;
 				window.location.href = "HomePage_AfterLogin.html";
 			}
-			else {
-				console.log("wrong in else")
+			if (response==0) {
 				alert("Invalid login credentials. Please retry");
 			}
 			
 			/*document.getElementById('message').innerHTML = resp;*/
 			});
-		}
 	}
+	
 
 </script>
 </body>

@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SMART - Knowledge Manager</title>
-
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SMART - Knowledge Zone</title>
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- for fontawesome icon css file -->
@@ -24,19 +23,15 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>    
     <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>  
     <!-- Favicon -->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">  
-  
-	  <script type="text/javascript" src="/pico/client.js"></script>
-	  <script>
-		pico.load("QueryKB");
-	  </script>
-	  <script type="text/javascript" src="sessvars.js"></script>
-  </head>
-<body>
-  <!-- =========================
-    //////////////This Theme Design and Developed //////////////////////
-    //////////// by www.wpfreeware.com======================--> 
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"> 
+	
+	<link href="css/treestyle.css" rel="stylesheet" type="text/css">
+	
+	<script type="text/javascript" src="/pico/client.js"></script>
+	<script>pico.load('KnowZoneDB')</script>
+</head>
 
+<body>
   <!-- Preloader -->
   <div id="preloader">
     <div id="status">&nbsp;</div>
@@ -61,13 +56,13 @@
       <div id="navbar" class="navbar-collapse collapse navbar_area">          
         <ul class="nav navbar-nav navbar-right custom_nav">
           <li><a href="HomePage.html">Home</a></li>
-          <li class="dropdown">
+		  <li class="dropdown">
 			<a data-target="KZTree.html" href="KZTree.html" class="dropdown-toggle">Knowledge Zone<span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
-              <li><a href="KnowledgeManagement.html">Knowledge Manager</a></li>            
+              <li><a href="KnowledgeManager.html">Knowledge Manager</a></li>            
             </ul>
           </li>
-          <li><a href="Training.html">Training</a></li>  
+          <li class="active"><a>Training</a></li>  
 		  <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Support<span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
@@ -81,90 +76,157 @@
       </div><!--/.nav-collapse -->
     </div>
   </nav>
-  <!-- End navbar -->
-<br/>
-  <!-- Start Service area -->
+  <br/>
+  
   <section id="service">
     <div class="container">
       <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="service_area">
           <div class="service_title">
             <hr>
-            <h2><center>Knowledge Manager</center></h2>
+            <h2>SMART - <span/>Coaching</h2>
             <!--<p>Trusted by Fortune 500 retailers and the world’s top brands.</p>-->
           </div>
+		  <br/><br/><br/>
 		  
-		  <!-- start slider section -->
+  <!-- End navbar -->
+<img STYLE="WIDTH:1110px; HEIGHT:400px" src="img/slider/3.jpg" align="middle"><br/><br/><br/>
+<style> 
+.nodep {
+font-family: 'Open Sans', sans-serif; 
+color: #333;
+left: 25px;
+cursor: pointer;
 
-            <img STYLE="WIDTH:1110px; HEIGHT:400px" src="img/slider/1.jpg" align="middle">
-			<table width=100% height=100%><tr><td width=50%>
-			<div>
-			<h3><b>Search Panel</b></h3> 
-			<div style = "width:500px;height:220px;border:1px solid #000;">
-			<br>
-			
-			
-			<div>
-				&nbsp;&nbsp;<input style="width:400px;" type="text" id ="searchbox" name = "searchbox" placeholder="Search"/>
-				<input onclick="SearchKP()" type="submit"/><br>
-			</div>
-		
-			
-			<div class="dropdown">
-			<h5><b>&nbsp;&nbsp;Select your Subject Area<b></h5>
-			  &nbsp;&nbsp;<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-				Subject Area
-				<span class="caret"></span>
-			  </button>
-			  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-				<li><a style="cursor:pointer;" onclick="setField(this)">Additive Manufacturing</a></li>
-				<li><a style="cursor:pointer;" onclick="setField(this)">Advanced Materials</a></li>
-				<li><a style="cursor:pointer;" onclick="setField(this)">Digital Manufacturing</a></li>
-				<li><a style="cursor:pointer;" onclick="setField(this)">Robotics & Automation</a></li>
-			  </ul>
-			  <input type="text" id="subarea" style="width:340px;height:33px;" class="field left" value="Subject Area" readonly></input>
-			</div>
-			
-			
-			<div class="dropdown">
-			<h5><b>&nbsp;&nbsp;Select the sub-category<b></h5>
-			  &nbsp;&nbsp;<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-				Sub-Category
-				<span class="caret"></span>
-			  </button>
-			  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-				<li><a style="cursor:pointer;" onclick="setField_1(this)">Aerospace</a></li>
-				<li><a style="cursor:pointer;" onclick="setField_1(this)">Biology & Pharmaceuticals</a></li>
-				<li><a style="cursor:pointer;" onclick="setField_1(this)">Chemicals & Engineering</a></li>
-				<li><a style="cursor:pointer;" onclick="setField_1(this)">Electronics</a></li>
-				<li><a style="cursor:pointer;" onclick="setField_1(this)">Machinery & Systems</a></li>
-			  </ul>
-			  <input type="text" id="subcat" style="width:333px;height:33px;" class="field left" value="Sub-Category" readonly></input>
-			</div>
-			
-			</div>
-			</div>
-			</td>
+}
 
-			<td width=50%>
-			<h3><b>Search Results</b></h3> 
-			<div style="position:static;width:600px;height:220px;border:1.5px solid #223;">
-			<br>
-			<p id="searchrestitle"><b>&nbsp;&nbsp;Your search results will be populated here<b></p>
-			<p><a id="searchitem1" onclick="KnwLmgDetails(this.id)">&nbsp;</a></p>
-			<p><a id="searchitem2" onclick="KnwLmgDetails(this.id)">&nbsp;</a></p>
-			<p><a id="searchitem3" onclick="KnwLmgDetails(this.id)">&nbsp;</a></p>
-			<p><a id="searchitem4" onclick="KnwLmgDetails(this.id)">&nbsp;</a></p>
-			</td></tr></table>
+.nodep1 {
+font-family: 'Open Sans', sans-serif; 
+color: #333;
+left: 28px
 
-              <!--<a class="read_more" href="#">read more<i class="fa fa-long-arrow-right"></i></a>-->
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End Service area -->
+}
 
-    <!-- start special quote -->
+.nodep2 {
+font-family: 'Open Sans', sans-serif; 
+color: #333;
+left: 36px
+
+}
+
+.nodep3 {
+font-family: 'Open Sans', sans-serif; 
+color: #333;
+left: 44px
+
+}
+
+.nodep4 {
+font-family: 'Open Sans', sans-serif; 
+color: #333;
+left: 52px
+
+}
+
+.nodep5 {
+font-family: 'Open Sans', sans-serif; 
+color: #333;
+left: 60px
+
+}
+
+.part1 {
+background-image: "img/slider/3.jpg"
+}
+
+</style>
+
+<div><h3><b>Tutorials Available</b></h3>
+<table width=100% height=100%><tr><td width=50%></div>
+
+<div class ="part1" style="position:static;width:400px;height:600px;overflow-y: scroll;border:1.5px solid #223;">
+
+
+<div class="treelayout">  
+<ul id = "tree" class="tree">
+  <li class="nodep"><a onclick="liclicked(this.id)" id="Assembly Robots"><b>Assembly Robots</b></a>
+  <li class="nodep"><a onclick="liclicked(this.id)" id="Machine Handling Robots"><b>Machine Handling Robots</b></a>
+  <li class="nodep"><a onclick="liclicked(this.id)" id="Healthcare Robots"><b>Healthcare Robots</b></a>
+  <li class="nodep"><a onclick="liclicked(this.id)" id="Scanning Robots"><b>Scanning Robots</b></a>
+	<ul>
+	  <li class="nodep1"><a onclick="liclicked(this.id)" id="PONTOS"><b>PONTOS</b></a>
+	  <li class="nodep1"><a onclick="liclicked(this.id)" id="ARAMIS"><b>ARAMIS</b></a>
+	  <li class="nodep1"><a onclick="liclicked(this.id)" id="ATOS GOM"><b>ATOS GOM</b></a>
+		<ul>
+		  <li class="nodep2"><a onclick="liclicked(this.id)" id="Hardware"><b>Hardware</b></a></li>
+		  <li class="nodep2"><a onclick="liclicked(this.id)" id="Software"><b>Software</b></a>
+			<ul>
+			  <li class = "nodep3"><a onclick="liclicked(this.id)" id="GOM Inspect"><b>GOM Inspect</b></a>
+				<ul>
+				  <li class = "nodep4"><a onclick="liclicked(this.id)" id="Introduction to Scanning"><b>Lesson 1: Scanning</b></a>
+				  </li>
+				</ul>
+			  </li>
+			</ul>			
+		  </li>
+	</ul>
+  </li>
+</li> 
+</ul>
+
+</ul>
+</div>
+
+</div>
+<div><h3><b><center><input type ="submit" value="View your Dashboard"></center></b></h3></div>
+</td>
+
+<td width=50%>
+
+<!--<div style="position:static;width:700px;height:500px;border:1.5px solid #223;">-->
+
+
+  <div style="width:700px;height:665px;overflow-y: scroll;border:1.5px solid #223;" class="panel-body fixed-panel">
+<!--</div>-->
+<h3><b><center><a id='KZHeading'>Lesson 1: Scanning</a></center></b></h3><br></br>
+
+<h4><b>What will you learn from this lesson?</b></h4>
+<p style="text-align:justify" id="para1">
+This lesson will take you through the following topics with the help of text based learning, images, videos and interactive 3D simulations:<br></br>
+1) Components of the ATOS Scanbox 6130 
+2) Basics of pre-scan
+3) The scanning procedure
+<br></br>
+By the end of this lesson, you should be familiar with how an object, large or small is scanned on the ATOS Scanbox 6130 along with an overview of all the basic procedures involved.
+<br></br>
+</p>
+
+<h4><b>Evaluation Pattern:</b></h4>
+<p style="text-align:justify" id="para2">
+There will be an evaluation test at the end of this lesson to gauge how much you have learnt. The test will be consist of a series of 10 questions in MCQ format with each question having only one correct answer.
+
+The passing criteria for the test is 80% after which the further modules will open up.
+
+You can re-take the test a maximum of 3 times.
+<br></br><br></br><br></br><br></br><br></br>
+</p>
+<h3>
+<b><input style="float:left" type ="submit" value="<Previous"></b>
+<b><input style="float:right" type ="submit" value="Next>"></b>
+</h3>
+</div>
+</td></tr></table>
+
+
+
+</div>
+</div>
+</div>
+</section>
+
+<br/><br/><br/>
+
+  <!-- start special quote -->
   <section id="specialQuote">
     <div class="container">
       <div class="row">
@@ -175,8 +237,8 @@
     </div>
   </section>
   <!-- End special quote -->
-
   
+
     <!-- start footer -->
   <footer id="footer">
     <div class="container">
@@ -247,73 +309,47 @@
     </div>
   </footer>
   <!-- End footer -->
-  
-  <script>
-  function KnwLmgDetails(DetID)
-  {
-		var curr_val = document.getElementById(DetID).innerHTML
-		var curr_val = curr_val.replace(/&amp;/g, '&');
-		sessvars.kpid = curr_val;
-		window.location.href = "KnowledgeManager_Details.html";  
-  }
 
-  </script>
-  
-  
-  
-  <script>
-  function setField(link){
-  var cur_pressed = link.innerHTML
-  var cur_pressed = cur_pressed.replace(/&amp;/g, '&');
-  document.getElementById('subarea').value = cur_pressed  
-  }
-  </script>
-  
-  <script>
-  function setField_1(link){
-  var cur_pressed_1 = link.innerHTML
-  var cur_pressed_1 = cur_pressed_1.replace(/&amp;/g, '&');
-  document.getElementById('subcat').value = cur_pressed_1  
-  }
-  </script>
-  
-  <script>
-  function SearchKP()
-  {
-		document.getElementById("searchitem1").innerHTML = ""
-		document.getElementById("searchitem2").innerHTML = ""
-		document.getElementById("searchitem3").innerHTML = ""
-		document.getElementById("searchitem4").innerHTML = ""
-		
-		var searchq = document.getElementById("searchbox").value
-		var subarea = document.getElementById("subarea").value
-		var subcat = document.getElementById("subcat").value
-		var subarea = subarea.replace(/&amp;/g, '&');
-		var subcat = subcat.replace(/&amp;/g, '&');
-		
-		if (searchq == null || searchq == "")
-		{
-			alert("Please enter keywords in the search field.")
-			return false;
-		}
-		
-		QueryKB.QuerySearch(searchq,subarea,subcat,function(response){
-			    for (var i = 1; i < 5; i++) {
-					if (response[response.length - i])
-						document.getElementById("searchitem" + i).innerHTML = response[response.length - i];
-						document.getElementById("searchitem" + i).href = "KnowledgeManager_Details.html";
-				}	
 
-		if (response.length==0)
-		{document.getElementById("searchrestitle").innerHTML = " No results found"}
-		else{
-		document.getElementById("searchrestitle").innerHTML = " The following results have been obtained from the search query:"}
-		});	
-  }
-  </script>
+<script>
+function liclicked(str)
+{
+	KnowZoneDB.KZDB(str,function(response){
+				document.getElementById('para1').innerHTML = response[0];
+				document.getElementById('para2').innerHTML = response[1];
+				document.getElementById('KZHeadingImg').src = response[2];			
+			});
+	document.getElementById('KZHeading').innerHTML = str;	
+}
+
+
+</script>
   
-  
-  
+<script>
+var tree = document.querySelectorAll('ul.tree a:not(:last-child)');
+//var eletext = document.getElementById('FirstLevel').innerHTML
+//KnowZoneDB.KZDB(eletext)
+
+//Enter py access here
+
+
+for(var i = 0; i < tree.length; i++){
+    tree[i].addEventListener('click', function(e) {
+        var parent = e.target.parentElement;
+        var classList = parent.classList;
+        if(classList.contains("open")) {
+            classList.remove('open');
+            var opensubs = parent.querySelectorAll(':scope .open');
+            for(var i = 0; i < opensubs.length; i++){
+                opensubs[i].classList.remove('open');
+            }
+        } else {
+            classList.add('open');
+        }
+    });
+}
+</script>
+
   <!-- jQuery Library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <!-- For content animatin  -->
@@ -332,6 +368,6 @@
 
   <!-- custom js file include -->
   <script src="js/custom.js"></script>  
-      
-  </body>
+
+</body>
 </html>

@@ -1,0 +1,53 @@
+<html>
+
+<head>
+	<script type="text/javascript" src="/pico/client.js"></script>
+	<script>
+	pico.load("QueryKB");
+	</script>
+	<script type="text/javascript" src="sessvars.js"></script>
+</head>
+
+
+<body>
+
+<h2>Topic: Scanning</h2>
+<h3>Question 1</h3>
+
+<p><a id="questionhere">Question here</a></p>
+<button onclick="tempcheck()">Click ME !</button>
+
+<div id="optionshere">
+
+
+<script>
+
+	function tempcheck() {
+		var radio_home = document.getElementById("optionshere");
+		var label = document.createElement("label");
+		var radio = document.createElement("input");
+		radio.type = "radio";
+		radio.name = 'Yes';
+		radio.value = 'Yes';
+
+		label.appendChild(radio);
+
+		label.appendChild(document.createTextNode('Scanning'));
+		  radio_home.appendChild(label);
+
+	}
+
+
+
+
+
+</script>
+
+</div>
+
+
+
+</body>
+
+
+</html>

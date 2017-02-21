@@ -1,0 +1,16 @@
+Category,Question,Option1,Option2,Option3,Option4,Answer
+E,Which is the first step one needs to perform for 3-D scanning?,Post-Scanning,Cleaning job surface,Validating result,Re-Scanning,2
+E,Selection of lens is one of the important criteria in pre-scanning,TRUE,FALSE,x,x,1
+E,Noise can be kept with the scanned data while validating results,Yes,No,x,x,2
+E,Which of the following is a type of usually performed scanning method?,Rough,Accurate,Detail,All of the above,1
+E,Re-scanning should be done only after validating the scanned results with references,Always,Sometimes,Never,x,1
+M,Lens size selection depends on the size and type of object to be scanned,TRUE,FALSE,x,x,1
+M,"For very specific point details, which lens should be used for scanning?",170mm,300mm,700mm,x,1
+M,Which type of scanning is preferred in case of reverse engineering?,Fast,Detail,Rough,Accurate,3
+M,Which of the following is hard in procedure to scan?,Shiny pieces,Very dark color,Blades,All of the above,4
+M,Fixturing is a method of placing job initially before scanning it,TRUE,FALSE,x,x,1
+H,Does size of stickers and the density on the surface affects the quality of scanning?,Yes,No,x,x,1
+H,"For a long shaft having multiple screws embedded on it, which lens should be used?",Long focal length lens,Short focal length lens,Both should be used,x,3
+H,The maximum area of the job body which scanner can scan at a time is,1m,2m,3m,Size does not matter,2
+H,Which of the following would be a reason for bad scanning results?,Inadequate stickers,Inappropriate software,Uncleaned surface,All of the above,4
+H,Spray coat (Thick/Thin) of the developer doesn’t affect the final scan?,TRUE,FALSE,x,x,2
