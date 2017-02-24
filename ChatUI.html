@@ -6,35 +6,36 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>SMARTBOT</title>
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- for fontawesome icon css file -->
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <!-- superslides css -->
-    <link rel="stylesheet" href="css/superslides.css">
-    <!-- for content animate css file -->
-    <link rel="stylesheet" href="css/animate.css">    
-    <!-- slick slider css file -->
-    <link href="css/slick.css" rel="stylesheet">        
-    <!-- website theme color file -->   
-     <link id="switcher" href="css/themes/cyan-theme.css" rel="stylesheet">    
-    <!-- main site css file -->    
-    <link href="style.css" rel="stylesheet">    
-    <!-- google fonts  -->  
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>    
-    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>  
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"> 
-	
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<!-- for fontawesome icon css file -->
+	<link href="css/font-awesome.min.css" rel="stylesheet">
+	<!-- superslides css -->
+	<link rel="stylesheet" href="css/superslides.css">
+	<!-- for content animate css file -->
+	<link rel="stylesheet" href="css/animate.css">    
+	<!-- slick slider css file -->
+	<link href="css/slick.css" rel="stylesheet">        
+	<!-- website theme color file -->   
+	 <link id="switcher" href="css/themes/cyan-theme.css" rel="stylesheet">    
+	<!-- main site css file -->    
+	<link href="style.css" rel="stylesheet">    
+	<!-- google fonts  -->  
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>    
+	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>  
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"> 
+
 	<link href="css/treestyle.css" rel="stylesheet" type="text/css">
 	<!--<link href="ChatStyle.css" rel="stylesheet" type="text/css"></link>-->
+
+	<script type="text/javascript" src="/pico/client.js"></script>
+	<script>pico.load('SMARTBotChat')</script>
+	<script type="text/javascript" src="sessvars.js"></script>	
 	
-	  <script type="text/javascript" src="/pico/client.js"></script>
-	  
-	  <script>pico.load('SMARTBotChat')</script>
 </head>
 
-<body>
+<body onload="CheckUName()">
 
 
   <!-- Preloader -->
@@ -67,16 +68,16 @@
               <li><a href="KnowledgeManager.html">Knowledge Manager</a></li>            
             </ul>
           </li>
-          <li><a href="Training.html">Training</a></li>  
+          <li><a href="Coaching.html">Coaching</a></li>  
 		  <li class="active">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Support<span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
               <li><a href="#">FAQ</a></li>
-              <li><a href="#">Forums</a></li>
+              <li><a href="Forums.html">Forums</a></li>
               <li><a href="ContactUs.html">Contact Us</a></li>               
             </ul>
           </li>
-		  <li><a href = "LoginRegister.html">Log in</a></li>		  
+		  <li><a href = "LoginRegister.html" id="Login">Log in</a></li>		  
         </ul>
       </div><!--/.nav-collapse -->
     </div>
@@ -270,6 +271,20 @@ SMARTBotChat.FAQDynamicResp(quest,function(response){
 
 </script>
 
+<script>
+
+	function CheckUName()
+	{
+	var curr_username = sessvars.username;
+
+	if (curr_username != 'NotLoggedIn'){
+
+		document.getElementById('Login').innerHTML = curr_username;
+		}
+	}
+
+</script>
+  
 <!-- jQuery Library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <!-- For content animatin  -->

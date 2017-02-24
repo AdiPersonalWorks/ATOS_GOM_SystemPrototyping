@@ -32,10 +32,7 @@
 	  </script>
 	  <script type="text/javascript" src="sessvars.js"></script>
   </head>
-<body>
-  <!-- =========================
-    //////////////This Theme Design and Developed //////////////////////
-    //////////// by www.wpfreeware.com======================--> 
+<body onload="CheckUName()">
 
   <!-- Preloader -->
   <div id="preloader">
@@ -67,16 +64,16 @@
               <li><a href="KnowledgeManagement.html">Knowledge Manager</a></li>            
             </ul>
           </li>
-          <li><a href="Training.html">Training</a></li>  
+          <li><a href="Coaching.html">Coaching</a></li>  
 		  <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Support<span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
               <li><a href="ChatUI.html">FAQ</a></li>
-              <li><a href="#">Forums</a></li>
+              <li><a href="Forums.html">Forums</a></li>
               <li><a href="ContactUs.html">Contact Us</a></li>               
             </ul>
           </li>
-		  <li><a href = "LoginRegister.html">Log in</a></li>		  
+		  <li><a href = "LoginRegister.html" id="Login">Log in</a></li>		  
         </ul>
       </div><!--/.nav-collapse -->
     </div>
@@ -312,7 +309,19 @@
   }
   </script>
   
+    <script>
   
+  function CheckUName()
+  {
+	var curr_username = sessvars.username;
+	
+	if (curr_username != 'NotLoggedIn'){
+	
+		document.getElementById('Login').innerHTML = curr_username;
+		}
+  }
+  
+  </script>
   
   <!-- jQuery Library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

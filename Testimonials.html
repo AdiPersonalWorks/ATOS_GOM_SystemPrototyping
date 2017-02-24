@@ -25,18 +25,11 @@
     <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>  
     <!-- Favicon -->
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">  
+	<script type="text/javascript" src="sessvars.js"></script>	
   
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
   </head>
-<body>
-  <!-- =========================
-    //////////////This Theme Design and Developed //////////////////////
-    //////////// by www.wpfreeware.com======================--> 
+<body onload="CheckUName()">
+
 
   <!-- Preloader -->
   <div id="preloader">
@@ -68,7 +61,7 @@
               <li><a href="KnowledgeManager.html">Knowledge Manager</a></li>            
             </ul>
           </li>
-          <li><a href="Training.html">Training</a></li>  
+          <li><a href="Coaching.html">Coaching</a></li>  
 		  <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Support<span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
@@ -77,7 +70,7 @@
               <li><a href="ContactUs.html">Contact Us</a></li>               
             </ul>
           </li>
-		  <li><a href = "LoginRegister.html">Log in</a></li>		  
+		  <li><a href = "LoginRegister.html" id="Login">Log in</a></li>		  
         </ul>
       </div><!--/.nav-collapse -->
     </div>
@@ -269,8 +262,20 @@
   </footer>
   <!-- End footer -->
 
-  
- 
+<script>
+
+	function CheckUName()
+	{
+	var curr_username = sessvars.username;
+
+	if (curr_username != 'NotLoggedIn'){
+
+		document.getElementById('Login').innerHTML = curr_username;
+		}
+	}
+
+</script>
+
   
   <!-- jQuery Library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

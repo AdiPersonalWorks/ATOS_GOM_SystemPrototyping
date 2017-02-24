@@ -25,8 +25,14 @@
     <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>  
     <!-- Favicon -->
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">  
+	<script type="text/javascript" src="sessvars.js"></script>
   </head>
-<body>
+  
+
+  
+  
+  
+<body onload="CheckUName()">
   <!-- Preloader -->
   <div id="preloader">
     <div id="status">&nbsp;</div>
@@ -57,7 +63,7 @@
               <li><a href="KnowledgeManagement.html">Knowledge Manager</a></li>            
             </ul>
           </li>
-          <li><a href="Training.html">Training</a></li>  
+          <li><a href="Coaching.html">Coaching</a></li>  
 		  <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Support<span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
@@ -66,7 +72,7 @@
               <li><a href="ContactUs.html">Contact Us</a></li>               
             </ul>
           </li>
-		  <li><a href = "LoginRegister.html">Log in</a></li>		  
+		  <li><a href = "LoginRegister.html" id="Login">Log in</a></li>		  
         </ul>
       </div><!--/.nav-collapse -->
     </div>
@@ -87,15 +93,11 @@
 		  <!-- start slider section -->
 
             <img STYLE="WIDTH:1110px; HEIGHT:400px" src="img/slider/1.jpg" align="middle">
-
-
-
-              <h2><b>What you can do here?</b></h2>
-
-
-				The forums is still under construction. Please bear with us.
-
-			
+<!--            <h2><b>What you can do here?</b></h2>
+				The forums is still under construction. Please bear with us. -->
+				<br></br>
+				<!--Used embeddable forums from: http://talkiforum.com-->
+				<script type="text/javascript" src="http://fv1w4f90nr.embed.talkiforum.com/embed/1.js"></script></div>
         </div>
       </div>
     </div>
@@ -185,7 +187,19 @@
   </footer>
   <!-- End footer -->
 
+    <script>
   
+  function CheckUName()
+  {
+	var curr_username = sessvars.username;
+	
+	if (curr_username != 'NotLoggedIn'){
+	
+		document.getElementById('Login').innerHTML = curr_username;
+		}
+  }
+  
+  </script>
  
   
   <!-- jQuery Library -->

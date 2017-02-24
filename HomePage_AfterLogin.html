@@ -63,12 +63,12 @@
               <li><a href="KnowledgeManager.html">Knowledge Manager</a></li>            
             </ul>
           </li>
-          <li><a>Training</a></li>  
+          <li><a href="Coaching.html">Coaching</a></li>  
 		  <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Support<span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
               <li><a href="ChatUI.html">FAQ</a></li>
-              <li><a>Forums</a></li>
+              <li><a href="Forums.html">Forums</a></li>
               <li><a href="ContactUs.html">Contact Us</a></li>               
             </ul>
           </li>
@@ -76,7 +76,7 @@
             <a href="#" class="dropdown-toggle" id = "welmsg" data-toggle="dropdown" role="button" aria-expanded="false">NULL<span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
               <li><a href="#">Profile Settings</a></li>
-              <li><a href="HomePage.html">Log Out</a></li>             
+              <li><a onclick="RemUsername()" href="HomePage.html" id="Login">Log Out</a></li>             
             </ul>
           </li>	  
         </ul>
@@ -136,27 +136,27 @@
         <div class="service_area">
           <div class="service_title">
             <hr>
-            <h2>SMART Knowledge Management System and Intelligent Coaching </h2>
-            <!--<p>Trusted by Fortune 500 retailers and the world’s top brands.</p>-->
+            <h2>What does SMART offer you?</h2>
+
           </div>
           <ul class="service_nav wow flipInX">
             <li>
               <a class="service_icon" href="#"><i class="fa fa-users"></i></a>
-              <h2>What is SMART?</h2>
-              <p style="text-align:justify">SMART (Structuring Manufacturing Architecture for Robotic Technologies) is an integrated knowledge management system to assist operators as well as to coach/train novices to navigate the complex knowledge of robotic technologies.
+              <h2>Knowledge Under One Roof</h2>
+              <p style="text-align:justify">Domain experts can add and manage knowledge points pertaining to their organization.
 				</p>
               <!--<a class="read_more" href="#">read more<i class="fa fa-long-arrow-right"></i></a> -->
             </li>
            <li>
               <a class="service_icon" href="#"><i class="fa fa-gears"></i></a>
-              <h2>How SMART works?</h2>
-              <p style="text-align:justify">The system adopts a systematic scaffolding approach to develop the taxonomy framework to capture the different types of expert knowledge – declarative, procedural and causal - for knowledge transfer and sharing in using advanced robotic technologies. The taxonomy scaffold assists the experts to capture their expertise of the domain expertise that will then be transferred to and shared with the novices using experiential 3D and Virtual Reality coaching and adaptive learning modules.</p>
+              <h2>Intelligent Learning Platform</h2>
+              <p style="text-align:justify">New employees can adapt to the organization by learning through this efficient adaptive tutoring platform.</p>
               <!--<a class="read_more" href="#">read more<i class="fa fa-long-arrow-right"></i></a>-->
             </li>
             <li>
               <a class="service_icon" href="#"><i class="fa fa-support"></i></a>
-              <h2>Why SMART?</h2>
-              <p style="text-align:justify">The benefits of using this platform are two-fold – first, capturing and storing organizational expertise are important to prevent institutional loss of knowledge from attrition of domain experts; and second, it would increase productivity of novices in operating the robots as they can learn more efficiently online or be coached digitally in operating the complex technologies.</p>
+              <h2>Instant Query Resolution</h2>
+              <p style="text-align:justify">The system facilitates natural language query resolution with high efficieny.</p>
               <!--<a class="read_more" href="#">read more<i class="fa fa-long-arrow-right"></i></a>-->
             </li>
           </ul>
@@ -174,7 +174,7 @@
           <div class="howworks_area">
             <div class="client_title">
               <hr>
-              <h2>SMART<span> Features</span></h2>
+              <h2>LATEST NEWS</h2>
             </div>
             <div class="row">
               <div class="col-lg-6 col-md-6 col-sm-6">
@@ -201,7 +201,7 @@
                     </a>
                     <div class="media-body">
                       <h4 class="media-heading">Knowledge Management</h4>
-                      <p>Domain experts can add and manage knowledge points pertaining to their organization</p>
+                      <p></p>
                     </div>
                   </div>
                   <!-- End single featured -->
@@ -213,7 +213,7 @@
                     </a>
                     <div class="media-body">
                       <h4 class="media-heading">Intelligent Tutoring</h4>
-                      <p>New employees can adapt to the organization by learning through this efficient adaptive tutoring platform</p>
+                      <p></p>
                     </div>
                   </div>
                   <!-- End single featured -->
@@ -225,7 +225,7 @@
                     </a>
                     <div class="media-body">
                       <h4 class="media-heading">Query Resolution</h4>
-                      <p>The system facilitates natural language query resolution with high efficieny</p>
+                      <p></p>
                     </div>
                   </div>
                   <!-- End single featured -->
@@ -240,7 +240,7 @@
   </section>
   <!-- End How it works area -->
 
-  <!-- start Our Team area -->
+  <!-- start Our Team area
   <section id="ourTeam">
     <div class="container">
       <div class="row">
@@ -417,6 +417,13 @@
   
   </script>
   
+  
+  <script>
+  function RemUsername()
+  {
+	sessvars.username = 'NotLoggedIn'  
+  }
+  </script>
   
   
   <!-- jQuery Library -->
