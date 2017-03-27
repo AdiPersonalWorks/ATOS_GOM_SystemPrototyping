@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>SMARTBOT</title>
+	<title>SMART - User Profile Details</title>
+
 	<!-- Bootstrap -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<!-- for fontawesome icon css file -->
@@ -17,7 +17,7 @@
 	<!-- slick slider css file -->
 	<link href="css/slick.css" rel="stylesheet">
 	<!-- website theme color file -->
-	 <link id="switcher" href="css/themes/cyan-theme.css" rel="stylesheet">
+	<link id="switcher" href="css/themes/cyan-theme.css" rel="stylesheet">
 	<!-- main site css file -->
 	<link href="style.css" rel="stylesheet">
 	<!-- google fonts  -->
@@ -25,16 +25,12 @@
 	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 	<!-- Favicon -->
 	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-
-	<link href="css/treestyle.css" rel="stylesheet" type="text/css">
-	<!--<link href="ChatStyle.css" rel="stylesheet" type="text/css"></link>-->
-
 	<script type="text/javascript" src="/pico/client.js"></script>
-	<script>pico.load('SMARTBotChat')</script>
+	<script>pico.load("UserProfDB");</script>
 	<script type="text/javascript" src="sessvars.js"></script>
 
-</head>
 
+  </head>
 <body onload="CheckUName()">
 
 
@@ -56,14 +52,14 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand">SMART <span>Structuring Manufacturing Architecture for Robotic Technologies</span></a>
+        <a class="navbar-brand" href="index.html">SMART <span>Structuring Manufacturing Architecture for Robotic Technologies</span></a>
         <!-- <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo"></a> -->
       </div>
       <div id="navbar" class="navbar-collapse collapse navbar_area">
         <ul class="nav navbar-nav navbar-right custom_nav">
 		  <li><a href="#" onclick="WhichHome()">Home</a></li>
-		  <li>
-			<a href="#" class = "active" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Knowledge Zone<span class="caret"></span></a>
+		  <li class="dropdown">
+			<a data-target="KZTree.html" href="KZTree.html" class="dropdown-toggle">Knowledge Zone<span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
               <li><a href="KnowledgeManager.html">Knowledge Manager</a></li>
             </ul>
@@ -74,10 +70,10 @@
               <li><a href="#" onclick="SelDashboard()"><center>Dashboard</center></a></li>
             </ul>
           </li>
-		  <li class="active">
+		  <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Support<span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
-              <li><a href="#">FAQ</a></li>
+              <li><a href="ChatUI.html">FAQ</a></li>
               <li><a href="Forums.html">Forums</a></li>
               <li><a href="ContactUs.html">Contact Us</a></li>
             </ul>
@@ -85,7 +81,7 @@
 		  <li class="dropdown">
             <a data-target="LoginRegister.html" href="" class="dropdown-toggle" id="Login">NULL<span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
-              <li id="hide1" style="display:none"><a href="UserProfile.html">User Profile</a></li>
+              <li class="active" id="hide1" style="display:none"><a href="UserProfile.html">User Profile</a></li>
               <li id="hide2" style="display:none"><a onclick="RemUsername()" href="HomePage.html">Log Out</a></li>
             </ul>
           </li>
@@ -93,83 +89,109 @@
       </div><!--/.nav-collapse -->
     </div>
   </nav>
-  <br/>
-</body>
-
-
-<!-- Start Service area -->
+  <!-- End navbar -->
+  <br>
+  <!-- Start Service area -->
   <section id="service" style="background-image:url(img/back1.jpg)">
     <div class="container">
       <div class="col-lg-12 col-md-12 col-sm-12">
-        <div class="service_area">
-          <div >
-
-            <h2><center><b>Frequently Asked Questions</b></center></h2><br>
-            <!--<p>Trusted by Fortune 500 retailers and the world�s top brands.</p>-->
+                <div class="service_area">
+          <div>
+            <h2><center><b>User Details</center></b></h2><br>
+            <!--<p>Trusted by Fortune 500 retailers and the world’s top brands.</p>-->
           </div>
 
-		  <table width=100% height=100%><tr><td width=80%>
 
-		  <div class ="part1" style="padding-left: 0.2cm;padding-right: 0.2cm;position:static;width:750px;height:550px;overflow-y: scroll;border:1.5px solid #223;">
-		  <br><p style="text-align:justify"><b>The following questions are the most frequently asked and are updated weekly.</b></p>
+  <!-- start slider section -->
 
-		  <p><b>QUERY SEARCH</b></p>
-		  <input id="queryitem" type="text" style = "width:600px;"></input>
-		  <input type="submit" onclick="querysearch()"></input>
-		  <br></br>
+  <img STYLE="WIDTH:1110px; HEIGHT:250px" src="img/slider/4.jpg" align="middle">
 
-		  <p style="text-align:justify"><a = id="q1"><b>1. What is a 3D Scanner?</p></a></b>
-		  <p style="text-align:justify"><a = id="a1">A 3D scanner is a device that analyses a real-world object or environment to collect data on its
-					shape and possibly its appearance (e.g. colour). The collected data can then be used to construct digital
-					three-dimensional models. Many different technologies can be used to build these 3D-scanning devices;
-					each technology comes with its own limitations, advantages and costs.</a></p>
+  <!-- <!-- <!-- start Contact section -->
+  <section id="contact">
+    <div class="row">
+      <div class="col-lg-12 col-md-12">
+        <div class="contact_map">
+          <!-- Start Google map -->
 
-		  <p style="text-align:justify"><a = id="q2"><b>2. Where are industrial robots generally used?</p></a></b>
-		  <p style="text-align:justify"><a = id="a2">An industrial robot is a robot system used for manufacturing. Industrial robots are automated,
-					programmable and capable of movement on two or more axes. Typical applications of robots include welding, painting,
-					assembly, pick and place for printed circuit boards, packaging and labeling, palletizing, product inspection, and
-					testing; all accomplished with high endurance, speed, and precision. They can help in material handling and provide
-					interfaces.</a></p>
-
-		  <p style="text-align:justify"><a = id="q3"><b>3. What are disadvantages of using robots?</p></a></b>
-		  <p style="text-align:justify"><a = id="a3">While robots used in manufacturing increase production speed, worker safety and financial savings,
-		  they are significantly more expensive than human labor. They also create new safety hazards and reduce the amount of jobs available.
-		  Robotic surgery is a relatively new development, with its primary disadvantages involving a lack of efficiency and the prohibitive cost.</a></p>
-
-		  <p style="text-align:justify"><a = id="q4"><b>4. What are various roles played by Advanced Manufacturing sector?</p></a></b>
-		  <p style="text-align:justify"><a = id="a4">The term "advanced manufacturing" encompasses many of the developments in the manufacturing field,
-		  including high tech products and processes and Clean, green, and flexible manufacturing, among others. The Advanced Manufacturing
-		  entity makes extensive use of computer, high precision, and information technologies integrated with a high performance workforce
-		  in a production system capable of furnishing a heterogeneous mix of products in small or large volumes with both the efficiency of
-		  mass production and the flexibility of custom manufacturing in order to respond quickly to customer demands.</a></p>
-
-		  </td>
-		  </div>
-		  <td width=20%>
-
-
-		  <!-- start slider section -->
-		  <iframe width="350" height="550" src="https://console.api.ai/api-client/demo/embedded/SMART-BOT"></iframe>
-		  </td></tr></table>
-			</div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-  <!-- start special quote -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+         <div class="contact_area">
+              <center><h2><b>PROFILE INFORMATION</b></h2></center>
+            <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="contact_left wow fadeInLeft">
+                  <!--<form id ="suppform" class="submitphoto_form">-->
+
+					<div>
+				<a style="padding-left:0.2cm;width:150px"><input style="width:150px; text-align:center;font-weight:bold" type="text"  value="UserName" readonly></input></a>
+				&nbsp;&nbsp;<input style="width:300px;" type="text" id ="username" name = "keywordstext" placeholder="Enter Username"/>
+			        </div><br>
+					<div>
+				<a style="padding-left:0.2cm;width:150px"><input style="width:150px; text-align:center;font-weight:bold" type="text"  value="Full Name" readonly></input></a>
+				&nbsp;&nbsp;<input style="width:300px;" type="text" id ="fullname" name = "keywordstext" placeholder="Enter Full Name"/>
+			        </div><br>
+					<div>
+				<a style="padding-left:0.2cm;width:150px"><input style="width:150px; text-align:center;font-weight:bold" type="text"  value="Date of Birth" readonly></input></a>
+				&nbsp;&nbsp;<input style="width:300px;" type="text" id ="dob" name = "keywordstext" placeholder="dd/mm/yyyy"/>
+			        </div><br>
+					<div>
+				<a style="padding-left:0.2cm;width:150px"><input style="width:150px; text-align:center;font-weight:bold" type="text"  value="Department" readonly></input></a>
+				&nbsp;&nbsp;<input style="width:300px;" type="text" id ="dept" name = "keywordstext" placeholder="Enter your Department"/>
+			        </div><br>
+					<div>
+				<a style="padding-left:0.2cm;width:150px"><input style="width:150px; text-align:center;font-weight:bold" type="text"  value="Designation" readonly></input></a>
+				&nbsp;&nbsp;<input style="width:300px;" type="text" id ="desig" name = "keywordstext" placeholder="Enter your Designation"/>
+			        </div><br>
+					<div>
+				<a style="padding-left:0.2cm;width:150px"><input style="width:150px; text-align:center;font-weight:bold" type="text"  value="E-Mail" readonly></input></a>
+				&nbsp;&nbsp;<input style="width:300px;" type="text" id ="email" name = "keywordstext" placeholder="Enter your E-Mail address"/>
+			        </div><br>
+
+					<div>
+				<h3 style="padding-left:0.2cm;"><span class="label label-default">User Access Level</span>
+				&nbsp;&nbsp;<span class="label label-default" id="UAL">&nbsp;</span></h3>
+			        </div>
+			        <div>
+					<h3 style="padding-left:0.2cm;"><span class="label label-default">Supervisor's Name</span>
+					&nbsp;&nbsp;<span class="label label-default" id="SName">&nbsp;</span></h3>
+			        </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="contact_right wow fadeInRight">
+                  <img style='width:200px;height:200px' id='profilepic' src="" alt="img">
+                    <p><a href="Change Profile Picture">Change Profile Picture</a></p>
+                </div>
+              </div>
+            </div>
+         </div>
+        </div>
+      </div>
+    </div>
+	<h3><center><input type="submit" value="Edit Profile" onclick = "editprof()">
+	<input type="submit" value="Submit" onclick = "submitedited()"></center></h3>
+  </section>
+  <!-- End Contact section -->
+
+	    <!-- start special quote -->
   <section id="specialQuote">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 col-md-12 wow bounceInLeft">
-          <p style="font-size:20px">Pairing substantial savings in time and money with the ease and reliability of doing it in-house, ever since - we invented it</p>
+          <p style="font-size:20px">Pairing substantial savings in time and money with the ease and reliability of doing it in-house, ever since… we invented it</p>
         </div>
       </div>
     </div>
   </section>
   <!-- End special quote -->
 
-
-    <!-- start footer -->
+  <!-- start footer -->
   <footer id="footer">
     <div class="container">
       <div class="row">
@@ -207,7 +229,7 @@
                   <ul>
                     <li><a href="ContactUs.html">Support</a></li>
                     <li><a>Blog</a></li>
-                    <li><a>FAQ</a></li>
+                    <li><a href="ChatUI.html">FAQ</a></li>
                     <li><a href="Testimonials.html">Testimonial Archive</a></li>
                     <li><a>Careers</a></li>
                     <li><a>Developer API</a></li>
@@ -240,50 +262,7 @@
   </footer>
   <!-- End footer -->
 
-
-<!--<script src="ChatLogix.js"></script>-->
-
-
-<!--Query Search Logic-->
 <script>
-function querysearch(){
-
-var quest = document.getElementById('queryitem').value;
-
-
-SMARTBotChat.FAQDynamicResp(quest,function(response){
-
-		if (response == 0){
-			document.getElementById('q1').innerHTML = 'No results obtained. Please try another question'
-			document.getElementById('q1').style.fontWeight = 'bold';
-			document.getElementById('a1').innerHTML = ""
-			document.getElementById('q2').innerHTML = ""
-			document.getElementById('a2').innerHTML = ""
-			document.getElementById('q3').innerHTML = ""
-			document.getElementById('a3').innerHTML = ""
-			document.getElementById('q4').innerHTML = ""
-			document.getElementById('a4').innerHTML = ""}
-		else{
-			document.getElementById('q1').innerHTML = 'Most relevant question:'
-			document.getElementById('q1').style.fontWeight = 'bold';
-			document.getElementById('a1').innerHTML = response[0]
-			document.getElementById('a1').style.fontWeight = 'bold';
-			document.getElementById('q2').innerHTML = response[1]
-			document.getElementById('a2').innerHTML = ""
-			document.getElementById('q3').innerHTML = ""
-			document.getElementById('a3').innerHTML = ""
-			document.getElementById('q4').innerHTML = ""
-			document.getElementById('a4').innerHTML = ""}
-
-
-		});
-}
-
-
-</script>
-
-<script>
-
 	function CheckUName()
 	{
 	var curr_username = sessvars.username;
@@ -293,16 +272,81 @@ SMARTBotChat.FAQDynamicResp(quest,function(response){
 		document.getElementById('Login').innerHTML = curr_username;
 		document.getElementById('hide1').style.display = "block";
 		document.getElementById('hide2').style.display = "block";
+		setUserProfile();
 		}
 	else{
 	document.getElementById('Login').innerHTML = 'Log In';
 	document.getElementById('Login').href = 'LoginRegister.html';
+		}
 	}
+</script>
+
+<script>
+	function setUserProfile(){
+
+		//Disabling
+		document.getElementById('username').disabled = true;
+		document.getElementById('fullname').disabled = true;
+		document.getElementById('dob').disabled = true;
+		document.getElementById('dept').disabled = true;
+		document.getElementById('desig').disabled = true;
+		document.getElementById('email').disabled = true;
+
+		var curr_username = sessvars.username;
+		UserProfDB.UserProfPopulate(curr_username,function(response){
+			document.getElementById('username').value = curr_username;
+			document.getElementById('fullname').value = response[0];
+			document.getElementById('dob').value = response[1];
+			document.getElementById('dept').value = response[2];
+			document.getElementById('desig').value = response[3];
+			document.getElementById('email').value = response[4];
+			document.getElementById('UAL').innerHTML = response[5];
+			document.getElementById('SName').innerHTML = response[6];
+			document.getElementById('profilepic').src = response[7];
+			});
+	}
+</script>
+
+<script>
+	function editprof()
+	{
+			//Disabling
+		//document.getElementById('username').disabled = false;
+		document.getElementById('fullname').disabled = false;
+		document.getElementById('dob').disabled = false;
+		document.getElementById('dept').disabled = false;
+		document.getElementById('desig').disabled = false;
+		document.getElementById('email').disabled = false;
+	}
+</script>
+
+<script>
+	function submitedited()
+	{
+		var curr_username = sessvars.username;
+		var fullname = document.getElementById('fullname').value;
+		var dob = document.getElementById('dob').value;
+		var dept = document.getElementById('dept').value;
+		var desig = document.getElementById('desig').value;
+		var email = document.getElementById('email').value;
+		UserProfDB.SubmitEdited(curr_username,fullname,dob,dept,desig,email,function(response){
+
+		if(response==1){
+
+		alert('User profile successfully updated !')
+		document.getElementById('username').disabled = true;
+		document.getElementById('fullname').disabled = true;
+		document.getElementById('dob').disabled = true;
+		document.getElementById('dept').disabled = true;
+		document.getElementById('desig').disabled = true;
+		document.getElementById('email').disabled = true;
+			}
+		});
 	}
 
 </script>
 
-   <script>
+     <script>
   function RemUsername()
   {
 	sessvars.username = 'NotLoggedIn'
@@ -337,10 +381,12 @@ SMARTBotChat.FAQDynamicResp(quest,function(response){
 
 <!-- jQuery Library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
 <!-- For content animatin  -->
 <script src="js/wow.min.js"></script>
 <!-- bootstrap js file -->
 <script src="js/bootstrap.min.js"></script>
+
 <!-- superslides slider -->
 <script src="js/jquery.easing.1.3.js"></script>
 <script src="js/jquery.animate-enhanced.min.js"></script>
@@ -351,7 +397,12 @@ SMARTBotChat.FAQDynamicResp(quest,function(response){
 <script src="https://maps.googleapis.com/maps/api/js"></script>
 <script src="js/jquery.ui.map.js"></script>
 
+
 <!-- custom js file include -->
 <script src="js/custom.js"></script>
+
+</body>
+
+
 
 </html>

@@ -9,7 +9,7 @@ def KM_DB(KnowPoint):
 	conn = sqlite3.connect('Databases/SMART.db')
 	cursor = conn.cursor()
 	
-	cursor.execute('SELECT Description,Proc,DescImageURL,Parent,Status,UID,CreatedBy,ModifiedBy,KnowledgeType FROM KnowledgeZone WHERE KnowledgePoint=?',(KnowPoint,))
+	cursor.execute('SELECT Description,Proc,DescImageURL,Parent,Status,UID,CreatedBy,ModifiedBy,KnowledgeType,Causal FROM KnowledgeZone WHERE KnowledgePoint=?',(KnowPoint,))
 	for row in cursor.fetchall():
 		desc = row[0]
 		proc = row[1]
@@ -20,9 +20,10 @@ def KM_DB(KnowPoint):
 		Created = row[6]
 		Modified = row[7]
 		KType = row[8]
+		causal = row[9]
 		
 	conn.close()
-	return desc,proc,imageurl,parent,status,UID,Created,Modified,KType
+	return desc,proc,imageurl,parent,status,UID,Created,Modified,KType,causal
 	
 def getParents(KnowPoint):
 	conn = sqlite3.connect('Databases/SMART.db')
@@ -39,3 +40,11 @@ def getChildren(KnowPoint):
 	all_resp = cursor.fetchall()
 	conn.close()
 	return all_resp
+
+def DelKnowPoint(KnowPoint):
+	conn = sqlite3.connect('Databases/SMART.db')
+	cursor = conn.cursor()
+	cursor.execute('DELETE FROM KnowledgeZone WHERE KnowledgePoint=?',(KnowPoint,))
+	conn.commit()
+	conn.close()
+	return 1

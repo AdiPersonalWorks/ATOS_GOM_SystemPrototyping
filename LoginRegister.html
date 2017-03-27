@@ -9,11 +9,11 @@
 	<link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
 	<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
 	<link rel="stylesheet" href="css/style.css">
-	
+
 	<script type="text/javascript" src="/pico/client.js"></script>
 	<script>pico.load("pytodatabase");</script>
 	<script type="text/javascript" src="sessvars.js"></script>
-  
+
 </head>
 
 <body>
@@ -43,14 +43,14 @@
   </div>
   <div class="form">
     <h2>Create an account</h2>
-    <form>
+
       <input type="text" id="username" placeholder="Username" required/>
       <input type="password" id="password" placeholder="Password"required/>
       <input type="email" id="email" placeholder="Email Address" required/>
       <input type="text" id="dept" placeholder="Department" required/>
 	  <button onclick="RegistoDB()">Register</button>
       <!--<input type="submit" class="btn btn-info" id="simplepost" value = "Register" onclick="RegistoDB()"></input>-->
-    </form>
+
   </div>
   <div class="cta"><a href="ForgotPassword.html">Forgot your password?</a></div>
 </div>
@@ -69,19 +69,20 @@ function RegistoDB()
 		var Pass = document.getElementById("password").value;
 		var email = document.getElementById("email").value;
 		var dept = document.getElementById("dept").value;
-		
+
 		if (UID==null || UID=="" || Pass==null || Pass=="" || email==null || email=="" || dept==null || dept=="")
 		{
 			//alert("Please fill all the required fields");
 			return false;
 		}
-		
+
         pytodatabase.RegisDB(UID,Pass,email,dept,function(response){
-			if (response == "y"){alert('User Registered Successfully')}
-			else{window.setTimeout(alert('Username already exists. Please try again.'),5000)}
-			
-			document.getElementById('message').innerHTML = response;  
-		});	
+			if (response == 1){alert('User Registered Successfully')
+		location.reload()}
+			else{alert('Username already exists. Please try again.')}
+
+			document.getElementById('message').innerHTML = response;
+		});
 	}
 </script>
 
@@ -90,7 +91,7 @@ function RegistoDB()
 function LoginCheck()
 	{
 		var UID = document.getElementById("usernametext").value;
-		var Pass = document.getElementById("passtext").value;		
+		var Pass = document.getElementById("passtext").value;
 
 		pytodatabase.Login_Validate(UID,Pass,function(response){
 			if (response==1)
@@ -102,12 +103,10 @@ function LoginCheck()
 			if (response==0) {
 				alert("Invalid login credentials. Please retry");
 			}
-			
+
 			/*document.getElementById('message').innerHTML = resp;*/
 			});
 	}
-	
-
 </script>
 </body>
 </html>

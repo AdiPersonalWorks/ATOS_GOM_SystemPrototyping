@@ -3,7 +3,6 @@
   <head>
 
 <style>
-
 .outertable {
 font-family: arial, sans-serif;
 border-collapse: collapse;
@@ -12,39 +11,42 @@ height:100%;
 }
 
 .outertd, th {
-	border: 1px solid #17202A;
+	border: 2px solid #17202A;
 	text-align: left;
 
 	padding: 8px;
 	width: 50%
+
 }
 
+.outertd1{
+	border: 2px solid #17202A;
+	background-color: #50D050;
+	text-align: center;
+	font-size: 16px;
+	font-color: "blue"
+	padding: 8px;
+	width: 50%
+
+}
+
+.outertd2{
+	border: 2px solid #17202A;
+	text-align: center;
+
+	padding: 8px;
+	width: 50%
+
+}
 .outertd:nth-child(odd) {
 	background-color: #ECF0F1;
 }
-
-.node circle {
-  fill: #fff;
-  stroke: steelblue;
-  stroke-width: 3px;
-}
-
-.node text { font: 12px sans-serif;
-width: 10px }
-
-.link {
-  fill: none;
-  stroke: #ccc;
-  stroke-width: 2px;
-  
-}
-
 </style>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SMART - Knowledge Manager</title>
+    <title>SMART - Learning Dashboard</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -70,11 +72,10 @@ width: 10px }
 
 	<script type="text/javascript" src="/pico/client.js"></script>
 	<script>pico.load('KM_AED_DB')</script>
-  <script src="http://d3js.org/d3.v3.min.js"></script>
 
 
   </head>
-<body onload="KnowDet()">
+<body onload="KnowDet()" style="background-color:#000">
 
 
   <!-- Preloader -->
@@ -139,153 +140,97 @@ width: 10px }
     <div class="container">
       <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="service_area">
-          <div>
-            <h2><center><b>Knowledge Manager</center></b></h2><br>
+          <div >
+
+            <h2><center><b>Expert Dashboard</b></center></h2><br>
             <!--<p>Trusted by Fortune 500 retailers and the world’s top brands.</p>-->
           </div>
 
 		  <!-- start slider section -->
 
       <img STYLE="WIDTH:1110px; HEIGHT:250px" src="img/slider/4.jpg" align="middle">
-			<br/><br/>
-			<table width=100% height=100%><tr><td width=50%>
-			<div>
-			<h4><b>Item Summary</b></h4>
-			<div style = "width:500px;height:260px;">
 
-
-<table class="outertable">
-  <tr class = "outertr">
-    <td class="outertd">Descriptor</td>
-    <td class="outertd"><a id="t_descriptor">Something here</a></td>
-  </tr>
-  <tr class = "outertr">
-    <td class="outertd">Parent Category</td>
-    <td class="outertd"><a id="t_parent">Something here</a></td>
-  </tr>
-  <tr class = "outertr">
-    <td class="outertd">Status</td>
-    <td class="outertd"><a id="t_stat">Something here</a></td>
-  </tr>
-  <tr class = "outertr">
-    <td class="outertd">UID</td>
-    <td class="outertd"><a id="t_UID">Something here</a></td>
-  </tr>
-  <tr class = "outertr">
-    <td class="outertd">Created</td>
-    <td class="outertd"><a id="t_Created">Something here</a></td>
-  </tr>
-  <tr class = "outertr">
-    <td class="outertd">Modified</td>
-    <td class="outertd"><a id="t_Modified">Something here</a></td>
-  </tr>
-</table>
-<h4><b><input type ="submit" value="Add" onclick="addnewelement()"/></b>
-<b><input type ="submit" value="Edit" onclick="editnewelement()"/></b>
-<b><input type ="submit" value="Delete" onclick="delknowpoint()"/></b></h4>
-
-
-			</div>
-			</div>
+			<table width=100% height=100%>
 
 			<td width=50%>
-			<h4><b><input id="hierarchybutton" type ="submit" value="View Hierarchy" onclick="GotoTreeTest()"></b></h4>
-			<div style = "width:600px;height:255px;border:0.1px solid #000;padding-left:0.2cm;">
+			<div>
+			<h4><b>Quick Reports</b></h4>
 
-			
-      <!--<object type="text/html" id="treeobj" style="width:100%; height:100%; margin:1%;" hidden></object>-->
 
-      <div id="pandc" style="width:600px;height:255px;overflow:auto;position:relative">
-  			<br>
-  			<b><p id="searchitem1">&nbsp;</p></b>
-  			<p><a id="searchitem2" href = "" onclick = "KnowDet_Int(this.id)">&nbsp;</a></p>
-  			<p><a id="searchitem3" href = "" onclick = "KnowDet_Int(this.id)">&nbsp;</a></p>
-  			<b><p id="searchitem4">&nbsp;</p></b>
-  			<p><a id="searchitem5" href = "" onclick = "KnowDet_Int(this.id)">&nbsp;</a></p>
-  			<p><a id="searchitem6" href = "" onclick = "KnowDet_Int(this.id)">&nbsp;</a></p>
-  			<p><a id="searchitem7" href = "" onclick = "KnowDet_Int(this.id)">&nbsp;</a></p>
-  			<p><a id="searchitem8" href = "" onclick = "KnowDet_Int(this.id)">&nbsp;</a></p>
+  <h5><b><input type ="submit" value="Learning Path" onclick="printLearningPath()" style="width:160px"/></b></h5>
+  <h5><b><input type ="submit" value="Courses & Modules" onclick="printCoursesnModules()" style="width:160px"/></b></h5>
+	<h5><b><input type ="submit" value="Members" onclick="printMembers()" style="width:160px"/></b></h5>
+	<h5><b><input type ="submit" value="Teams" onclick="printTeams()" style="width:160px"/></b></h5>
+	<h5><b><input type ="submit" value="Assessment" onclick="printAssessment()" style="width:160px"/></b></h5>
+	<h5><b><input type ="submit" value="Compliance Summary" onclick="printComplianceSummary()" style="width:160px"/></b></h5>
 
-      </div>
+			</div>
+      <br>
+			<div>
+			<h4><b>Usage Reports</b></h4>
 
-	  <div id="accomTree" style="height: 100%; width: 100%;"></div>
+	<h5><b><input type ="submit" value="Login Activity" onclick="printLoginActivity()" style="width:160px"/></b></h5>
+	<h5><b><input type ="submit" value="Never Logged In" onclick="printNeverLoggedIn()" style="width:160px"/></b></h5>
+	<h5><b><input type ="submit" value="Courses Enrolled" onclick="printCoursesEnrolled()" style="width:160px"/></b></h5>
 
-    </td></table><br><br></br>
+	</div>
 
-			<div style = "width:1110px;height:600px;border:0.1px solid #000;">
+<br>
+	<div>
+	<h4><b>Summary</b></h4>
 
-<table class = "outertable">
-  <!--<tr style= "height:10%" class = "outertr">
-    <td style= "width:10%" class="outertd"><b>Descriptor</b></td>
-    <td class="outertd"><a id="t2_descriptor">Something here</a></td>
-  </tr>
-  <tr style= "height:10%" class = "outertr">
-    <td style= "width:10%" class="outertd"><b>KnowledgeType</b></td>
-    <td class="outertd"><a id="t2_Knowtype">Something here</a></td>
-  </tr>-->
-  <tr class = "outertr">
-    <!--<td style= "width:10%" class="outertd"><b>Details</b></td>-->
-    <td class="outertd"><a id="t2_details">
-	<div style= "height:100%;overflow: auto">
-	<center><img  id="KmDetImg" style="width:600px;height:200px" src="img/KnowledgeHeader.png" align="middle"></center><br>
+	<h5><b><input type ="submit" value="Module 1" onclick="printModule1()" style="width:160px"/></b></h5>
+	<h5><b><input type ="submit" value="Module 2" onclick="printModule2()" style="width:160px"/></b></h5>
+	<h5><b><input type ="submit" value="Module 3" onclick="printModule3()" style="width:160px"/></b></h5>
+	<h5><b><input type ="submit" value="Module 4" onclick="printModule4()" style="width:160px"/></b></h5>
 
-	<h4><b>Description</b></h4>
-	<p style="text-align:justify" id="para1">
-	The knowledge zone houses knowledge in the form of text, images, videos gathered from various sources such as journals, articles, interviews with experts and so on.
-
-	The panel on the left is a heirarchy of all the knowledge points which are present in this knowledge repository. Clicking on each one will display the content, contained within each of the knowledge point, in this window.
-
-	In case of any issues please get in contact with the support team.
-
-	</p>
-
-	<h4><b>Procedure</b></h4>
-	<p style="text-align:justify" id="para2">
-	The knowledge zone houses knowledge in the form of text, images, videos gathered from various sources such as journals, articles, interviews with experts and so on.
-
-	The panel on the left is a heirarchy of all the knowledge points which are present in this knowledge repository. Clicking on each one will display the content, contained within each of the knowledge point, in this window.
-
-	In case of any issues please get in contact with the support team.
-
-	</p>
-
-	<h4><b>Causal</b></h4>
-	<p style="text-align:justify" id="para3">
-	The knowledge zone houses knowledge in the form of text, images, videos gathered from various sources such as journals, articles, interviews with experts and so on.
-
-	The panel on the left is a heirarchy of all the knowledge points which are present in this knowledge repository. Clicking on each one will display the content, contained within each of the knowledge point, in this window.
-
-	In case of any issues please get in contact with the support team.
-
-	</p>
-
-	</a>
 	</div>
 	</td>
-  </tr>
-  <!-- <tr class = "outertr">
-    <td class="outertd"><b>Procedural</b></td>
-    <td class="outertd"></td>
-  </tr>
-  <tr class = "outertr">
-    <td class="outertd"><b>Causal</b></td>
-    <td class="outertd"></td>
-  </tr> -->
-</table>
 
-	        </div>
-			<br></br>
-              <!--<a class="read_more" href="#">read more<i class="fa fa-long-arrow-right"></i></a>-->
-        </div>
+	<td width=50% style="vertical-align:top">
+	<h3><b><center>Module Enrollments</center></b></h3>
+	<div style = "width:900px;height:250px;border:1.5px solid #000;">
+  <img src = "img/ModulesEnrollment.PNG" style = "width:448px;height:248px;float:left"></img>
+  <img src = "img/ModulesEnrollment2.PNG" style = "width:448px;height:248px;float:right"></img>
+  </div>
+	<br>
+		<div style="float:left;">
+			<h3><b> <center>My Saved/Favorite Reports </center></b></h3>
+			<div style = "width:430px;height:300px;border:1.5px solid #000;">
+			<p style="text-align:justify;padding-left:0.2cm" id="para1"><br>
+  	  <b>You have saved the following reports:</b><br></br>
+
+      • Module1 Assessment Results <br></br>
+      • Module2 Question Set <br></br>
+      • March Enrollment Report <br></br>
+      • February Login Activity <br></br>
+      • New Courses & Modules
+      <br></br>
+
+	     </p>
+     </div></div>
+     <div style="overflow:hidden; float:right;">
+		<h3><b><center>Most Popular Topics</center></b></h3>
+		<div style = "width:450px;height:300px;border:1.5px solid #000;">
+      <img src = "img/MostPopularTopics.PNG" style = "width:448px;height:298px"></img>
+    </div></div>
+		<br>
+		</td></tr>
+    </table>
+
+			<br>
+
 
       </div>
+
     </div>
 	</div>
+
 
   </section>
   <!-- End Service area -->
 
-    <!-- start special quote -->
+  <!-- start special quote -->
   <section id="specialQuote">
     <div class="container">
       <div class="row">
@@ -387,13 +332,11 @@ width: 10px }
   <script>
   function KnowDet()
   {
-  sessvars.treeShow = 0;
   CheckUName();
   //alert('Welcome '+sessvars.kpid)
   var str = sessvars.kpid
-  //alert(str)
   document.getElementById('t_descriptor').innerHTML = sessvars.kpid;
-  //document.getElementById('t2_descriptor').innerHTML = sessvars.kpid;
+  document.getElementById('t2_descriptor').innerHTML = sessvars.kpid;
   KM_AED_DB.KM_DB(str,function(response){
 			document.getElementById('para1').innerHTML = response[0];
 			document.getElementById('para2').innerHTML = response[1];
@@ -403,39 +346,30 @@ width: 10px }
 			document.getElementById('t_UID').innerHTML = response[5];
 			document.getElementById('t_Created').innerHTML = response[6];
 			document.getElementById('t_Modified').innerHTML = response[7];
-			//document.getElementById('t2_Knowtype').innerHTML = response[8];
+			document.getElementById('t2_Knowtype').innerHTML = response[8];
 			document.getElementById('para3').innerHTML = response[9];
 
 		});
 
   document.getElementById("searchitem1").innerHTML = " PARENTS";
   KM_AED_DB.getParents(str,function(response){
-
 			for (var i = 2; i < 4; i++) {
-					if (response[response.length - i + 1]){
-						document.getElementById("searchitem" + i).innerHTML = response[response.length - i + 1];
-						//document.getElementById("searchitem" + i).href = "KnowledgeManager_Details.html";
-            //document.getElementById("searchitem" + i).onclick = 'KnowDet_Int(this.id)';
-            }
-          }
+					if (response[response.length - i + 1])
+						document.getElementById("searchitem" + i).innerHTML = response[response.length - i + 1];}
+						document.getElementById("searchitem" + i).href = "KnowledgeManager_Details.html";
 
-            sessvars.Parent = response;
-            //alert(sessvars.Parent)
+
 		});
 
   document.getElementById("searchitem4").innerHTML = " CHILDREN";
   KM_AED_DB.getChildren(str,function(response){
 			//alert(response)
-
   			for (var i = 5; i < 9; i++) {
-					if (response[response.length - i + 4]){
-						document.getElementById("searchitem" + i).innerHTML = response[response.length - i + 4];
-						//document.getElementById("searchitem" + i).href = "KnowledgeManager_Details.html";
-            //document.getElementById("searchitem" + i).onclick = 'KnowDet_Int(this.id)';
-            }
-          }
-          sessvars.allChildren = response;
-          //alert(sessvars.allChildren)
+					if (response[response.length - i + 4])
+						document.getElementById("searchitem" + i).innerHTML = response[response.length - i + 4];}
+						document.getElementById("searchitem" + i).href = "KnowledgeManager_Details.html";
+
+
 		});
 
   }
@@ -451,7 +385,7 @@ width: 10px }
 		//alert(curr_val)
 		// Problems where there is an & sign. Try to replace with something else.
 		sessvars.kpid = curr_val;
-		setTimeout(window.location.href = "KnowledgeManager_Details.html",4000);
+		window.location.href = "KnowledgeManager_Details.html";
   }
 
   </script>
@@ -472,7 +406,7 @@ width: 10px }
 	else{
 	document.getElementById('Login').innerHTML = 'Log In';
 	document.getElementById('Login').href = 'LoginRegister.html';
-	 }
+	}
   }
 
   </script>
@@ -481,13 +415,11 @@ width: 10px }
   function delknowpoint(){
 
 	var KnowPoint = document.getElementById('t_descriptor').innerHTML
-	var curr_val = document.getElementById('t_parent').innerHTML
     var r = confirm("Are you sure you want to delete this knowledge point?");
     if (r == true) {
         KM_AED_DB.DelKnowPoint(KnowPoint,function(response){
-			alert('Knowledge Point Deleted. You will now be redirected back to the previous page !');
-			sessvars.kpid = curr_val;
-			setTimeout(window.location.href = "KnowledgeManager_Details.html",4000);
+			alert('Knowledge Point Deleted. You will now be redirected back to the Knowledge Manager !');
+			window.location.href = 'KnowledgeManager.html';
 		});
     }
 	else {
@@ -509,9 +441,7 @@ width: 10px }
   function editnewelement()
   {
 	var KnowPoint = document.getElementById('t_descriptor').innerHTML;
-  var KnowPointParent = document.getElementById('t_parent').innerHTML;
 	sessvars.KnowPoint = KnowPoint;
-  sessvars.KnowPointParent = KnowPointParent;
 	sessvars.curr_op = 'Edit';
 	window.location.href = 'AddElement.html';
   }
@@ -524,57 +454,19 @@ width: 10px }
   }
   </script>
 
-  <script>
+    <script>
   function WhichHome(){
 	var curr_username = sessvars.username;
 	if (curr_username != 'NotLoggedIn'){
 		window.location.href="HomePage_AfterLogin.html"
 	}
-	else
-   {
+	else{
 		window.location.href="HomePage.html"
-   }
+	}
   }
   </script>
 
-  <script>
-  function GotoTreeTest()
-  {
-    var treeShow = sessvars.treeShow;
-    if (treeShow == 0){
-
-      //document.getElementById('treeobj').object.location.href = "TreeTest.html";
-      //document.getElementById('treeobj').hidden = false;
-      d3.selectAll("svg > *").remove();
-      document.getElementById('pandc').hidden = true;
-      document.getElementById('accomTree').hidden = false;
-	  document.getElementById('accomTree').style.overflow = "auto";
-      //window.location.href="TreeTest.html"
-      //window.location.href="KnowledgeManager_Details.html"
-      document.getElementById('hierarchybutton').value = "Back to Results"
-      //window.onload = "TreeTest.html"
-      //document.getElementById('treeobj').data = "TreeTest.html";
-      drawTree();
-      sessvars.treeShow = 1
-  }
-
-    if (treeShow == 1){
-    //document.getElementById('treeobj').setAttribute('data',"TreeTest.html");
-    //document.getElementById('treeobj').object.location.href = "TreeTest.html";
-    //document.getElementById('treeobj').hidden = true;
-    d3.selectAll("svg > *").remove();
-    document.getElementById('pandc').hidden = false;
-    document.getElementById('accomTree').hidden = true;
-    document.getElementById('hierarchybutton').value = "View Hierarchy"
-    //window.location.href="TreeTest.html"
-    //window.onload = GotoTreeTest;
-    sessvars.treeShow = 0
-    }
-
-  }
-  </script>
-
-  <script>
+    <script>
   function SelDashboard()
   {
 	if (sessvars.username=='Mike')
@@ -588,158 +480,10 @@ width: 10px }
   }
   </script>
 
-
   <script>
-  function drawTree(){
-
-    var treeData = [
-      {
-        "name": "X",
-        "children": [
-          {
-            "name": "Y",
-              "children": [
-            ]
-          }
-        ]
-      }
-    ];
-
-    var nodes = [];
-    var links = [];
-    var d = {};
-	var childLength = 0;
-	var startIndex = 0;
-
-    var curr_node = sessvars.kpid
-    //alert(curr_node)
-    var Parent = sessvars.Parent;
-    var children_elements = sessvars.allChildren;
-
-    children_elements = children_elements + ''
-
-    if (children_elements.indexOf(',') > -1) {
-      var children_array = children_elements.split(',')
-    }
-
-
-    // Adding data to the tree
-    treeData[0].name = Parent //Parent
-    treeData[0].children[0].name = curr_node //Current Node
-
-    //treeData[0].children[0].children[0].name = "Calibration"
-    if (children_array!=undefined){
-		if (children_array.length>4){
-			startIndex = 4
-			childLength = children_array.length}
-		else{
-			startIndex = 0
-			childLength = children_array.length			
-		}
-      for (i=startIndex; i<childLength; i++){
-      treeData[0].children[0].children.push({"name" :children_array[i]})
-      }
-    }
-
-    d3.select("#the_SVG_ID").remove();
-    // ************** Generate the tree diagram	 *****************
-    var margin = {top: 40, right: 320, bottom: 20, left: 250},
-    	width = 700 - margin.right - margin.left,
-    	height = 300 - margin.top - margin.bottom;
-
-    var i = 0;
-
-
-    var tree = d3.layout.tree()
-    	.size([height, width])
-		.nodeSize([120, width]);
-
-    var diagonal = d3.svg.diagonal()
-    	.projection(function(d) { return [d.x, d.y]; });
-
-    var svg = d3.select("#accomTree").insert("svg")
-      .attr("id","the_svg_id")
-      .attr("width", width + margin.right + margin.left)
-      .attr("height", height + margin.top + margin.bottom)
-      .insert("g")
-      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-	  $("svg").css({position:'absolute'});
-
-    root = treeData[0];
-
-    update(root);
-
-    function update(source) {
-
-      // Compute the new tree layout.
-      var nodes = tree.nodes(root).reverse(),
-    	  links = tree.links(nodes);
-
-      // Normalize for fixed-depth.
-      nodes.forEach(function(d) { d.y = d.depth * 75; });
-
-      // Declare the nodes…
-      var node = svg.selectAll("g.node")
-    	  .data(nodes, function(d) { return d.id || (d.id = ++i); });
-
-      // Enter the nodes.
-      var nodeEnter = node.enter().insert("g")
-    	  .attr("class", "node")
-    	  .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; } );
-			  
-      nodeEnter.insert("circle")
-    	  .attr("r", 7)
-    	  .style("fill", "#fff")
-		  .on("click", function (d){click(d.name)})
-
-      nodeEnter.insert("text")
-    	  .attr("y", function(d) {
-    		  return d.children || d._children ? -18 : 18; })
-    	  .attr("dy", ".35em")
-    	  .attr("text-anchor", "middle")
-    	  .text(function(d) { return d.name; })
-    	  .style("fill-opacity", 1);
-		  
-
-      // Declare the links…
-      var link = svg.selectAll("path.link")
-    	  .data(links, function(d) { return d.target.id; });
-
-      // Enter the links.
-      link.enter().insert("path", "g")
-    	  .attr("class", "link")
-    	  .attr("d", diagonal);
-
-    }
+  function printMembers(){
+  window.location.href = "Expert_Dashboard_2.html"
   }
-  </script>
-  
-  <script>
-  function click(text){
-  
-  //alert(text)
-  KnowDet_Int2(text);
-  
-  }
-  
-  </script>
-  
-     <script>
-
-  function KnowDet_Int2(text)
-  {
-
-		var curr_val = text.toString();
-		try{
-			var curr_val = curr_val.replace(/&amp;/g, '&');}
-		catch(err)
-		{curr_val = text;}
-		//alert(curr_val)
-		// Problems where there is an & sign. Try to replace with something else.
-		sessvars.kpid = curr_val;
-		setTimeout(window.location.href = "KnowledgeManager_Details.html",2000);
-  }
-
   </script>
 
   <!-- jQuery Library -->

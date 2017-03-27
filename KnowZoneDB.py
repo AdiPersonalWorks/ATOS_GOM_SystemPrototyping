@@ -1,5 +1,4 @@
 from os import getenv
-import pymssql
 import pico
 import time
 import sqlite3
@@ -11,11 +10,12 @@ def KZDB(eletext):
 	cursor = conn.cursor()
 	##    print eletext
 
-	cursor.execute('SELECT Description,Proc,DescImageURL FROM KnowledgeZone WHERE KnowledgePoint=?',(eletext,))
+	cursor.execute('SELECT Description,Proc,DescImageURL,Causal FROM KnowledgeZone WHERE KnowledgePoint=?',(eletext,))
 	for row in cursor.fetchall():
 		desc = row[0]
 		proc = row[1]
 		imageurl = row[2]
+		causal = row[3]
 	##    print row[0]
 	##    print row[1]
 	#	  print("ID=%s, Pass=%s" % (row['Username'], row['Password']))
@@ -23,9 +23,9 @@ def KZDB(eletext):
 	##    cursor.execute('SELECT * FROM SMART_Registrations')
 	##    for row in cursor:
 	##        print row
-		
+
 	conn.close()
-	return desc,proc,imageurl
+	return desc,proc,imageurl,causal
 ##
 ##message = KZDB('Advanced Technologies')
 ##print message

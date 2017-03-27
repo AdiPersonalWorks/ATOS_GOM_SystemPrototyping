@@ -13,7 +13,7 @@ def FAQDynamicResp(query):
         sim = 0
         count = 0
         sim_count = 0
-        
+
         conn = sqlite3.connect('Databases/SMART.db')
         cursor = conn.cursor()
 
@@ -22,7 +22,7 @@ def FAQDynamicResp(query):
 
         cursor.execute('SELECT Answer FROM FAQ')
         all_ans = cursor.fetchall()
-        
+
         for quest in all_quests:
                 print quest
                 temp_similarity = SequenceMatcher(None, str(query), str(quest)).ratio()
@@ -34,13 +34,11 @@ def FAQDynamicResp(query):
                 count = count + 1
 
         print sim
-        if sim > 0.5:
+        if sim > 0.05:
                 return all_quests[sim_count][0], all_ans[sim_count][0]
         else:
                return 0
-        
+
 
 ##reply = FAQDynamicResp('Scanbox')
 ##print str(reply)
-
-

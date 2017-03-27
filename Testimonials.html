@@ -54,14 +54,19 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse navbar_area">          
         <ul class="nav navbar-nav navbar-right custom_nav">
-          <li><a href="HomePage.html">Home</a></li>
+		  <li><a href="#" onclick="WhichHome()">Home</a></li>
 		  <li class="dropdown">
 			<a data-target="KZTree.html" href="KZTree.html" class="dropdown-toggle">Knowledge Zone<span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
               <li><a href="KnowledgeManager.html">Knowledge Manager</a></li>            
             </ul>
           </li>
-          <li><a href="Coaching.html">Coaching</a></li>  
+		  <li class="dropdown">
+			<a data-target="Coaching.html" href="Coaching.html" class="dropdown-toggle">Coaching<span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#" onclick="SelDashboard()"><center>Dashboard</center></a></li>
+            </ul>
+          </li> 
 		  <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Support<span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
@@ -70,7 +75,13 @@
               <li><a href="ContactUs.html">Contact Us</a></li>               
             </ul>
           </li>
-		  <li><a href = "LoginRegister.html" id="Login">Log in</a></li>		  
+		  <li class="dropdown">
+            <a data-target="LoginRegister.html" href="" class="dropdown-toggle" id="Login">NULL<span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li id="hide1" style="display:none"><a href="UserProfile.html">User Profile</a></li>
+              <li id="hide2" style="display:none"><a onclick="RemUsername()" href="HomePage.html">Log Out</a></li>             
+            </ul>
+          </li>	 	  
         </ul>
       </div><!--/.nav-collapse -->
     </div>
@@ -79,20 +90,19 @@
 <br/>
 
 <!-- Start Service area -->
-  <section id="service">
+  <section id="service" style="background-image:url(img/back1.jpg)">
     <div class="container">
       <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="service_area">
-          <div class="service_title">
-            <hr>
-            <h2>SMART - <span/>Testimonials</h2>
+          <div>
+            <h2><center><b>Testimonials</center></b></h2>
             <!--<p>Trusted by Fortune 500 retailers and the world’s top brands.</p>-->
           </div>
 		  
 		  
 		  <!-- start slider section -->
 
-            <img STYLE="WIDTH:1110px; HEIGHT:400px" src="img/slider/1.jpg" align="middle">
+            <img STYLE="WIDTH:1110px; HEIGHT:250px" src="img/slider/4.jpg" align="middle">
 				<br/><br/>
 				
 				<div style="float:left">
@@ -149,7 +159,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 col-md-12 wow bounceInLeft">
-          <p>Pairing substantial savings in time and money with the ease and reliability of doing it in-house, ever since… we invented it</p>
+          <p style="font-size:20px">Pairing substantial savings in time and money with the ease and reliability of doing it in-house, ever since… we invented it</p>
         </div>
       </div>
     </div>
@@ -220,7 +230,7 @@
                 </div>
                 <div class="single_footer_top contact_mail">
                   <h2>Contact us</h2>
-                  <p>We are always open for a quick chat! Give us a call or email us any time and we will respond shortly. <span>+1 888-522-0212</span> or <a href="#">smart@onlysmart.com</a></p>
+                  <p>We are always open for a quick chat! Give us a call or email us any time and we will respond shortly. <span>+65 6419 1209</span> or <a href="#">mtan@ihpc.a-star.edu.sg</a></p>
                 </div>
               </div>
               <div class="col-lg-4 col-md-4 col-sm-4">
@@ -265,17 +275,54 @@
 <script>
 
 	function CheckUName()
-	{
 	var curr_username = sessvars.username;
-
+	
 	if (curr_username != 'NotLoggedIn'){
-
+	
 		document.getElementById('Login').innerHTML = curr_username;
+		document.getElementById('hide1').style.display = "block";
+		document.getElementById('hide2').style.display = "block";
 		}
+	else{
+	document.getElementById('Login').innerHTML = 'Log In';
+	document.getElementById('Login').href = 'LoginRegister.html';
+	}
 	}
 
 </script>
 
+   <script>
+  function RemUsername()
+  {
+	sessvars.username = 'NotLoggedIn'  
+  }
+  </script>
+  
+    <script>
+  function WhichHome(){
+	var curr_username = sessvars.username;
+	if (curr_username != 'NotLoggedIn'){
+		window.location.href="HomePage_AfterLogin.html"
+	}
+	else{
+		window.location.href="HomePage.html"
+	}
+  }
+  </script>
+  
+    <script>
+  function SelDashboard()
+  {
+	if (sessvars.username=='Mike')
+	{
+		window.location.href="Expert_Dashboard_1.html";
+	}
+  	if (sessvars.username=='John')
+	{
+		window.location.href="Learner_Dashboard.html";
+	}
+  }
+  </script>
   
   <!-- jQuery Library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

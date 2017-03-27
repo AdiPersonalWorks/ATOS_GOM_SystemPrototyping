@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SMART - Knowledge Manager</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- for fontawesome icon css file -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <!-- superslides css -->
+    <link rel="stylesheet" href="css/superslides.css">
+    <!-- for content animate css file -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- slick slider css file -->
+    <link href="css/slick.css" rel="stylesheet">
+    <!-- website theme color file -->
+     <link id="switcher" href="css/themes/cyan-theme.css" rel="stylesheet">
+    <!-- main site css file -->
+    <link href="style.css" rel="stylesheet">
+    <!-- google fonts  -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+
+	  <script type="text/javascript" src="/pico/client.js"></script>
+	  <script>pico.load("AddEditDB");</script>
+	  <script type="text/javascript" src="sessvars.js"></script>
+  </head>
+
+<body onload="CheckUName()" >
+  <!-- Preloader -->
+  <div id="preloader">
+    <div id="status">&nbsp;</div>
+  </div>
+
+  <!-- End Preloader -->
+  <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+
+  <!-- start navbar -->
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand">SMART <span>Structuring Manufacturing Architecture for Robotic Technologies</span></a>
+        <!-- <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo"></a> -->
+      </div>
+      <div id="navbar" class="navbar-collapse collapse navbar_area">
+        <ul class="nav navbar-nav navbar-right custom_nav">
+		  <li><a href="#" onclick="WhichHome()">Home</a></li>
+          <li class="dropdown">
+			<a data-target="KZTree.html" href="KZTree.html" class="dropdown-toggle">Knowledge Zone<span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="KnowledgeManager.html">Knowledge Manager</a></li>
+            </ul>
+          </li>
+		  <li class="dropdown">
+			<a data-target="Coaching.html" href="Coaching.html" class="dropdown-toggle">Coaching<span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#" onclick="SelDashboard()"><center>Dashboard</center></a></li>
+            </ul>
+          </li>
+		  <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Support<span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="ChatUI.html">FAQ</a></li>
+              <li><a href="Forums.html">Forums</a></li>
+              <li><a href="ContactUs.html">Contact Us</a></li>
+            </ul>
+          </li>
+		  <li class="dropdown">
+            <a data-target="LoginRegister.html" href="" class="dropdown-toggle" id="Login">NULL<span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li id="hide1" style="display:none"><a href="UserProfile.html">User Profile</a></li>
+              <li id="hide2" style="display:none"><a onclick="RemUsername()" href="HomePage.html">Log Out</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
+  <!-- End navbar -->
+<br/>
+  <!-- Start Service area -->
+  <section id="service" style="background-image:url(img/back1.jpg)">
+    <div class="container">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="service_area">
+          <div >
+
+            <h2><center><b>Knowledge Manager</b></center></h2><br>
+            <!--<p>Trusted by Fortune 500 retailers and the world’s top brands.</p>-->
+          </div>
+
+		  <!-- start slider section -->
+
+      <img STYLE="WIDTH:1110px; HEIGHT:250px" src="img/slider/4.jpg" align="middle">
+			<table width=100% height=100%><tr><td width=50%>
+			<div>
+			<h3 id="addedittitle"><b>Add New Element</b></h3>
+			<div style = "width:1110px;height:830px;border:1px solid #000;overflow:auto">
+			<br>
+
+			<div>
+				<h3 style="padding-left:0.2cm;"><span class="label label-default">Parent Name</span>
+				&nbsp;&nbsp;<span class="label label-default" id="parentname">&nbsp;</span></h3>
+			</div><br>
+
+			<div>
+				<a style="padding-left:0.2cm;width:150px"><input style="width:150px; text-align:center;font-weight:bold" type="text"  value="Descriptor Name" readonly></input></a>
+				&nbsp;&nbsp;<a style="padding-left:0.05cm"><input style="width:800px;" type="text" id ="descname" name = "descname" placeholder="Enter descriptor name here"/></a>
+			</div><br>
+
+			<div class="dropdown">
+			  &nbsp;&nbsp;<button style="width:150px" class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+				Status
+				<span class="caret"></span>
+			  </button>
+			  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+				<li><a style="cursor:pointer;" onclick="setField_1(this)">New</a></li>
+				<li><a style="cursor:pointer;" onclick="setField_1(this)">Approved</a></li>
+			  </ul>
+			  <a style="padding-left:0.2cm"><input type="text" id="KPstatus" style="width:800px;height:33px;" class="field left" value="" readonly></input></a>
+			</div><br>
+
+
+			<div class="dropdown">
+			  &nbsp;&nbsp;<button style="width:150px" class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+				Source
+				<span class="caret"></span>
+			  </button>
+			  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+				<li><a style="cursor:pointer;" onclick="setField(this)">Experience</a></li>
+				<li><a style="cursor:pointer;" onclick="setField(this)">Journals</a></li>
+				<li><a style="cursor:pointer;" onclick="setField(this)">Manual</a></li>
+				<li><a style="cursor:pointer;" onclick="setField(this)">Online</a></li>
+				<li><a style="cursor:pointer;" onclick="setField(this)">Others</a></li>
+			  </ul>
+			  <a style="padding-left:0.2cm"><input type="text" id="KPSource" style="width:340px;height:33px;" class="field left" placeholder="Select Source" readonly></input></a>
+			  <input type="text" id="otherarea" style="width:456px;height:33px;" class="field left" value="If others, please specify" onfocus="if(this.value=='If others, please specify') this.value='';" onblur="if (this.value=='') this.value='If others, please specify';"></input>
+			</div><br>
+
+			<div>
+				<a style="padding-left:0.2cm;width:150px"><input style="width:150px; text-align:center;font-weight:bold" type="text"  value="Keywords" readonly></input></a>
+				&nbsp;&nbsp;<input style="width:800px;" type="text" id ="keywordstext" name = "keywordstext" placeholder="Enter related keywords"/>
+			</div><br>
+
+			<div>
+				<a style="padding-left:0.2cm;width:150px"><input style="width:150px; text-align:center;font-weight:bold" type="text"  value="Description" readonly></input></a>
+				&nbsp;&nbsp;<textarea style="vertical-align:middle;width:800px;height:100px;overflow:auto" type="text" id ="desctext" name = "desctext" placeholder="Enter descriptive knowledge here"></textarea>
+				<h5 style="padding-left:4.4cm;"><span class="label label-default">Upload</span>
+				<b><input id="choose1" type ="button" value="Choose File" onclick="getFilePath_1(this.id)"/></b></input>
+				<b id = "choosetext1">No File Chosen</b>
+<!-- 				<b><input type ="submit" value="3D View"></b>
+				<b><input type ="submit" value="Video"></b></h5> -->
+			</div><br>
+
+			<div>
+				<a style="padding-left:0.2cm;width:150px"><input style="width:150px; text-align:center;font-weight:bold" type="text"  value="Procedure" readonly></input></a>
+				&nbsp;&nbsp;<textarea style="vertical-align:middle;width:800px;height:100px;overflow:auto" type="text" id ="proctext" name = "proctext" placeholder="Enter procedural knowledge here"></textarea>
+				<h5 style="padding-left:4.4cm;"><span class="label label-default">Upload</span>
+				<b><input id="choose2" type ="button" value="Choose File" onclick="getFilePath_2(this.id)"/></b>
+				<b id = "choosetext2">No File Chosen</b>
+<!-- 				<b><input type ="submit" value="3D View"></b>
+				<b><input type ="submit" value="Video"></b></h5> -->
+			</div><br>
+
+			<div>
+				<a style="padding-left:0.2cm;width:150px"><input style="width:150px; text-align:center;font-weight:bold" type="text"  value="Causal" readonly></input></a>
+				&nbsp;&nbsp;<textarea style="vertical-align:middle;width:800px;height:100px;overflow-y:auto" type="text" id ="causaltext" placeholder="Enter causal knowledge here"></textarea>
+				<h5 style="padding-left:4.4cm;"><span class="label label-default">Upload</span>
+				<b><input id="choose3" type ="button" value="Choose File" onclick="getFilePath_3(this.id)"/></b>
+				<b id = "choosetext3">No File Chosen</b>
+<!-- 				<b><input type ="submit" value="3D View"></b>
+				<b><input type ="submit" value="Video"></b></h5> -->
+			</div><br>
+
+			</div>
+			</div>
+			<center><h4>
+			<b><input type ="submit" value="Cancel" onclick="canceladd()"></b>
+			<b><input type ="submit" value="Preview" onclick="prev_ele()"></b>
+			<b><input type ="submit" value="Submit" onclick="subKP()"></b></h4></center>
+			</td>
+
+			</tr></table>
+
+              <!--<a class="read_more" href="#">read more<i class="fa fa-long-arrow-right"></i></a>-->
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Service area -->
+
+    <!-- start special quote -->
+  <section id="specialQuote">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 wow bounceInLeft">
+          <p style="font-size:20px">Pairing substantial savings in time and money with the ease and reliability of doing it in-house, ever since… we invented it</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End special quote -->
+
+
+    <!-- start footer -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="footer_top">
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4">
+                <div class="single_footer_top">
+                  <h2>Why choose us? </h2>
+                  <ul>
+                    <li><a>We create significant impact</a></li>
+                    <li><a>Our products are scalable</a></li>
+                    <li><a>Our services are top notch</a></li>
+                    <li><a>We have branded customers</a></li>
+                    <li><a>Our features are unparalleled</a></li>
+                    <li><a>We are the first of our kind</a></li>
+                    <li><a>Our team is friendly and helpful</a></li>
+                    <li><a>We provide excellent support</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-4">
+                <div class="single_footer_top">
+                  <h2>SMART</h2>
+                  <p>SMART (Structuring Manufacturing Architecture for Robotic Technologies) is an integrated knowledge management system to assist operators as well as to coach/train novices to navigate the complex knowledge of robotic technologies.</p>
+                </div>
+                <div class="single_footer_top contact_mail">
+                  <h2>Contact us</h2>
+                  <p>We are always open for a quick chat! Give us a call or email us any time and we will respond shortly. <span>+65 6419 1209</span> or <a href="#">mtan@ihpc.a-star.edu.sg</a></p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-4">
+                <div class="single_footer_top">
+                  <h2>Links </h2>
+                  <ul>
+                    <li><a href="ContactUs.html">Support</a></li>
+                    <li><a>Blog</a></li>
+                    <li><a href="ChatUI.html">FAQ</a></li>
+                    <li><a href="Testimonials.html">Testimonial Archive</a></li>
+                    <li><a>Careers</a></li>
+                    <li><a>Developer API</a></li>
+                    <li><a>Terms & Conditions</a></li>
+                  </ul>
+                </div>
+                <div class="single_footer_top">
+                  <h2>Social Links </h2>
+                  <ul class="social_nav">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="footer_bottom">
+            <div class="copyright">
+              <p>All rights reserved </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End footer -->
+
+  <script>
+  function canceladd(){
+	window.location.href = 'KnowledgeManager_Details.html';
+  }
+  </script>
+
+  <script>
+  function KnwLmgDetails(DetID)
+  {
+		var curr_val = document.getElementById(DetID).innerHTML
+		var curr_val = curr_val.replace(/&amp;/g, '&');
+		sessvars.kpid = curr_val;
+		window.location.href = "KnowledgeManager_Details.html";
+  }
+
+  </script>
+
+  <script>
+  function setField(link){
+  var cur_pressed = link.innerHTML
+  var cur_pressed = cur_pressed.replace(/&amp;/g, '&');
+  document.getElementById('KPSource').value = cur_pressed
+  }
+  </script>
+
+  <script>
+  function setField_1(link){
+  var cur_pressed_1 = link.innerHTML
+  var cur_pressed_1 = cur_pressed_1.replace(/&amp;/g, '&');
+  document.getElementById('KPstatus').value = cur_pressed_1
+  }
+  </script>
+
+
+
+  <script>
+  function CheckUName()
+  {
+	sessvars.prevstat = 0
+  sessvars.path1 = '';
+  sessvars.path2 = '';
+  sessvars.path3 = '';
+	var curr_username = sessvars.username;
+
+	if (curr_username != 'NotLoggedIn'){
+
+		document.getElementById('Login').innerHTML = curr_username;
+		document.getElementById('hide1').style.display = "block";
+		document.getElementById('hide2').style.display = "block";
+		}
+	else{
+	document.getElementById('Login').innerHTML = 'Log In';
+	document.getElementById('Login').href = 'LoginRegister.html';
+	}
+
+	setparent();
+  }
+  </script>
+
+  <script>
+  function setparent()
+  {
+	if (sessvars.curr_op == 'Add'){
+		document.getElementById('addedittitle').innerHTML = 'Add New Element';
+		document.getElementById('addedittitle').style.fontWeight = "bold";
+		var parent = sessvars.KnowPoint;
+		document.getElementById('parentname').innerHTML = parent;
+	}
+	if (sessvars.curr_op == 'Edit'){
+		document.getElementById('addedittitle').innerHTML = 'Edit Element';
+		document.getElementById('addedittitle').style.fontWeight = "bold";
+		document.getElementById('descname').disabled = true;
+    var parent = sessvars.KnowPointParent;
+    document.getElementById('parentname').innerHTML = parent;
+		edit_ele();
+	}
+
+  }
+  </script>
+
+  <script>
+  function edit_ele(){
+	var parent = sessvars.KnowPoint;
+	document.getElementById('descname').value = parent;
+
+	AddEditDB.editElement(parent,function(response){
+		document.getElementById('KPstatus').value = response[0];
+		document.getElementById('KPSource').value = response[1];
+		document.getElementById('otherarea').value = response[2];
+		document.getElementById('keywordstext').value = response[3];
+		document.getElementById('desctext').value = response[4];
+		document.getElementById('proctext').value = response[5];
+		document.getElementById('causaltext').value = response[6];
+	});
+  }
+  </script>
+
+  <script>
+  function prev_ele(){
+	if (sessvars.prevstat==0){
+		//White->LightGray
+		document.getElementById('descname').style.backgroundColor = "#D1D1D1";
+		document.getElementById('KPstatus').style.backgroundColor = "#D1D1D1";
+		document.getElementById('KPSource').style.backgroundColor = "#D1D1D1";
+		document.getElementById('otherarea').style.backgroundColor = "#D1D1D1";
+		document.getElementById('keywordstext').style.backgroundColor = "#D1D1D1";
+		document.getElementById('desctext').style.backgroundColor = "#D1D1D1";
+		document.getElementById('proctext').style.backgroundColor = "#D1D1D1";
+		document.getElementById('causaltext').style.backgroundColor = "#D1D1D1";
+
+		//Disabling
+		document.getElementById('descname').disabled = true;
+		document.getElementById('KPstatus').disabled = true;
+		document.getElementById('KPSource').disabled = true;
+		document.getElementById('otherarea').disabled = true;
+		document.getElementById('keywordstext').disabled = true;
+		document.getElementById('desctext').disabled = true;
+		document.getElementById('proctext').disabled = true;
+		document.getElementById('causaltext').disabled = true;
+
+		sessvars.prevstat=1	}
+	else{
+		//LightGray->White
+		if (sessvars.curr_op=='Add'){
+		document.getElementById('descname').style.backgroundColor = "#FFFFFF";}
+		document.getElementById('KPstatus').style.backgroundColor = "#FFFFFF";
+		document.getElementById('KPSource').style.backgroundColor = "#FFFFFF";
+		document.getElementById('otherarea').style.backgroundColor = "#FFFFFF";
+		document.getElementById('keywordstext').style.backgroundColor = "#FFFFFF";
+		document.getElementById('desctext').style.backgroundColor = "#FFFFFF";
+		document.getElementById('proctext').style.backgroundColor = "#FFFFFF";
+		document.getElementById('causaltext').style.backgroundColor = "#FFFFFF";
+
+		//Re-enabling
+		if (sessvars.curr_op=='Add'){
+		document.getElementById('descname').disabled = false;}
+		document.getElementById('KPstatus').disabled = false;
+		document.getElementById('KPSource').disabled = false;
+		document.getElementById('otherarea').disabled = false;
+		document.getElementById('keywordstext').disabled = false;
+		document.getElementById('desctext').disabled = false;
+		document.getElementById('proctext').disabled = false;
+		document.getElementById('causaltext').disabled = false;
+		sessvars.prevstat=0
+		}
+  }
+  </script>
+
+  <script>
+  function subKP(){
+
+		// IF ELSE FOR ADD EDIT WILL COME HERE!!!
+		var parent = document.getElementById('parentname').innerHTML;
+		var descname = document.getElementById('descname').value;
+		var KPStatus = document.getElementById('KPstatus').value;
+		var KPSource = document.getElementById('KPSource').value;
+		var otherarea = document.getElementById('otherarea').value;
+		var keywordstext = document.getElementById('keywordstext').value;
+		var desctext = document.getElementById('desctext').value;
+		var proctext = document.getElementById('proctext').value;
+		var causaltext = document.getElementById('causaltext').value;
+
+		var DescImageURL = sessvars.path1;
+		var ProcImageURL = sessvars.path2;
+		var CausalImageURL = sessvars.path3;
+
+		if (sessvars.curr_op=='Add'){
+			AddEditDB.AddElement(parent,descname,KPStatus,KPSource,otherarea,keywordstext,desctext,proctext,causaltext,DescImageURL,ProcImageURL,CausalImageURL,function(response){
+
+				if (response==1){
+				alert('Knowledge Point Added Successfully !!');
+				window.location.href = 'KnowledgeManager_Details.html';}
+
+				});
+		}
+		if (sessvars.curr_op=='Edit'){
+
+			AddEditDB.EditElement_Sub(descname,KPStatus,KPSource,otherarea,keywordstext,desctext,proctext,causaltext,DescImageURL,ProcImageURL,
+			CausalImageURL,function(response){
+
+				if (response==1){
+				alert('Knowledge Point Edited Successfully !!');
+				window.location.href = 'KnowledgeManager_Details.html';}
+
+				});
+		}
+
+  }
+
+  </script>
+
+  <script>
+  function getFilePath_1(id){
+  
+	AddEditDB.ChooseImg(id,function(response){
+		var path = response
+		document.getElementById('choosetext1').innerHTML = path;
+		path = 'SMART_Images/' + path;		
+		sessvars.path1 = path
+	});
+  }
+  </script>
+
+  <script>
+  function getFilePath_2(id){
+	AddEditDB.ChooseImg(id,function(response){
+		var path = response
+		document.getElementById('choosetext2').innerHTML = path;
+		path = 'SMART_Images/' + path;		
+		sessvars.path1 = path
+	});
+  }
+  </script>
+
+  <script>
+  function getFilePath_3(id){
+	AddEditDB.ChooseImg(id,function(response){
+		var path = response
+		document.getElementById('choosetext3').innerHTML = path;
+		path = 'SMART_Images/' + path;		
+		sessvars.path1 = path
+	});
+  }
+  </script>
+
+     <script>
+  function RemUsername()
+  {
+	sessvars.username = 'NotLoggedIn'
+  }
+  </script>
+
+    <script>
+  function WhichHome(){
+	var curr_username = sessvars.username;
+	if (curr_username != 'NotLoggedIn'){
+		window.location.href="HomePage_AfterLogin.html"
+	}
+	else{
+		window.location.href="HomePage.html"
+	}
+  }
+  </script>
+
+    <script>
+  function SelDashboard()
+  {
+	if (sessvars.username=='Mike')
+	{
+		window.location.href="Expert_Dashboard_1.html";
+	}
+  	if (sessvars.username=='John')
+	{
+		window.location.href="Learner_Dashboard.html";
+	}
+  }
+  </script>
+
+  <!-- jQuery Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <!-- For content animatin  -->
+  <script src="js/wow.min.js"></script>
+  <!-- bootstrap js file -->
+  <script src="js/bootstrap.min.js"></script>
+  <!-- superslides slider -->
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.animate-enhanced.min.js"></script>
+  <script src="js/jquery.superslides.min.js" type="text/javascript" charset="utf-8"></script>
+  <!-- slick slider js file -->
+  <script src="js/slick.min.js"></script>
+  <!-- Google map -->
+  <script src="https://maps.googleapis.com/maps/api/js"></script>
+  <script src="js/jquery.ui.map.js"></script>
+
+  <!-- custom js file include -->
+  <script src="js/custom.js"></script>
+
+  </body>
+</html>

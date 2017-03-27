@@ -5,26 +5,26 @@ import time
 import sqlite3
 import datetime
 
-def RegisDB(UID,Pass,email,phone):
+def RegisDB(Username,Pass,email,dept):
 
 	#conn = pymssql.connect(host='.\ADITYA', database='SMART')
 	conn = sqlite3.connect('Databases/SMART.db')
 	cursor = conn.cursor()
 	cur_datetime = str(datetime.datetime.now())
-	usrType = '1'
+	usrType = 'Expert'
 
 	try:
-		cursor.execute('INSERT INTO SMART_Registrations VALUES (?,?,?,?,?,?,?)',
-									((UID),(Pass),(email),(phone),(usrType),(cur_datetime),(cur_datetime)))
+		cursor.execute('INSERT INTO SMART_Registrations (Username, Password, Email, Department, UserAccessLevel, CreatedTime, LastLogin) VALUES (?,?,?,?,?,?,?)',
+									((Username),(Pass),(email),(dept),(usrType),(cur_datetime),(cur_datetime)))
 
 		time.sleep(5)
 		conn.commit()
 		time.sleep(5)
 		conn.close()
-		return "y"
+		return 1
 	except:
-		return "n"
-          
+		return 0
+
 # Login Validation
 def Login_Validate(UID,Pass):
         users = []
@@ -51,8 +51,9 @@ def Login_Validate(UID,Pass):
         except:
                 #time.sleep(5)
                 return 0
-	
+
         conn.close()
 
 ##message = Login_Validate('adityaexpert','adityaexpert')
 ##print message
+	

@@ -13,36 +13,36 @@
     <!-- superslides css -->
     <link rel="stylesheet" href="css/superslides.css">
     <!-- for content animate css file -->
-    <link rel="stylesheet" href="css/animate.css">    
+    <link rel="stylesheet" href="css/animate.css">
     <!-- slick slider css file -->
-    <link href="css/slick.css" rel="stylesheet">        
-    <!-- website theme color file -->   
-     <link id="switcher" href="css/themes/cyan-theme.css" rel="stylesheet">    
-    <!-- main site css file -->    
-    <link href="style.css" rel="stylesheet">    
-    <!-- google fonts  -->  
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>    
-    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>  
+    <link href="css/slick.css" rel="stylesheet">
+    <!-- website theme color file -->
+     <link id="switcher" href="css/themes/lite-blue-theme.css" rel="stylesheet">
+    <!-- main site css file -->
+    <link href="style.css" rel="stylesheet">
+    <!-- google fonts  -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <!-- Favicon -->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"> 
-	<script type="text/javascript" src="sessvars.js"></script>	
- 
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<script type="text/javascript" src="sessvars.js"></script>
+
   </head>
 <body onload="SetInitialUName()">
 
   <!-- Preloader -->
   <div id="preloader">
     <div id="status">&nbsp;</div>
-	
+
   </div>
- 
-  <!-- End Preloader -->   
+
+  <!-- End Preloader -->
   <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
-  
+
   <!-- start navbar -->
-  
+
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-  
+
     <div class="container">
 	<!-- <img src="/img/SMARTLogo.JPG" style="position:fixed;left:0;height:50px;width:50px"></img> -->
       <div class="navbar-header">
@@ -52,30 +52,35 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-		
+
         <a class="navbar-brand">SMART <span>Structuring Manufacturing Architecture for Robotic Technologies</span></a>
         <!-- <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo"></a> -->
       </div>
-	  
-      <div id="navbar" class="navbar-collapse collapse navbar_area">          
+
+      <div id="navbar" class="navbar-collapse collapse navbar_area">
         <ul class="nav navbar-nav navbar-right custom_nav">
           <li class="active"><a href="HomePage.html">Home</a></li>
 		  <li class="dropdown">
 			<a data-target="KZTree.html" href="KZTree.html" class="dropdown-toggle">Knowledge Zone<span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
-              <li><a href="KnowledgeManager.html">Knowledge Manager</a></li>            
+              <li><a href="KnowledgeManager.html">Knowledge Manager</a></li>
             </ul>
           </li>
-          <li><a href="Coaching.html">Coaching</a></li>  
+		  <li class="dropdown">
+			<a data-target="Coaching.html" href="Coaching.html" class="dropdown-toggle">Coaching<span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#" onclick="SelDashboard()"><center>Dashboard</center></a></li>
+            </ul>
+          </li>
 		  <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Support<span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
               <li><a href="ChatUI.html">FAQ</a></li>
               <li><a href="Forums.html">Forums</a></li>
-              <li><a href="ContactUs.html">Contact Us</a></li>               
+              <li><a href="ContactUs.html">Contact Us</a></li>
             </ul>
           </li>
-		  <li><a href = "LoginRegister.html" id="Login">Log in</a></li>		  
+		  <li><a href = "LoginRegister.html" id="Login">Log in</a></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
@@ -83,8 +88,8 @@
   <!-- End navbar -->
 
   <!-- start slider section -->
-  <section id="sliderSection">            
-    <div class="mainslider_area">
+  <section id="sliderSection">
+    <div class="mainslider_area" >
       <!-- Start super slider -->
       <div id="slides">
         <ul class="slides-container">
@@ -96,8 +101,8 @@
               <p>This online learning platform will provide users an efficient knowledge management framework and also a comprehensive learning environment.</p>
               <a class="slider_btn" href="AboutUs.html">Read More</a>
             </div>
-          </li> 
-          <!-- Start single slider-->           
+          </li>
+          <!-- Start single slider-->
           <li>
             <img src="img/slider/3.jpg" alt="img">
              <div class="slider_caption">
@@ -122,38 +127,45 @@
         </nav>
       </div>
     </div>
-  </div>    
+  </div>
   </section>
   <!-- End slider section -->
 
   <!-- Start Service area -->
-  <section id="service">
+  <section id="service" style="background-image:url(img/back1.jpg)">
     <div class="container">
       <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="service_area">
-          <div class="service_title">
-            <hr>
-            <h2>SMART Knowledge Management System and Coaching</h2>
+          <div style="color:blue">
+
+            <h2 style="color:blue"><center><b>SMART Knowledge Management System and Coaching</center></b></h2>
             <!--<p>Trusted by Fortune 500 retailers and the world’s top brands.</p>-->
           </div>
           <ul class="service_nav wow flipInX">
             <li>
               <a class="service_icon" href="#"><i class="fa fa-users"></i></a>
               <h2>What is SMART?</h2>
-              <p style="text-align:justify">SMART (Structuring Manufacturing Architecture for Robotic Technologies) is an integrated knowledge management system to assist operators as well as to coach/train novices to navigate the complex knowledge of robotic technologies.
+              <p style="text-align:justify">SMART is an integrated knowledge management system to assist operators as well as to coach/train novices to navigate the complex knowledge of robotic technologies. <br>
+                SMART can be used by:<br>
+                1) Robotic manufacturers to digitize manuals and know-how in crisp formats.<br>
+                2) Instructors to build content adopting cognitively inspired learning pedagogy.<br>
+                3) Certification authorities to accredit professional standards.
 				</p>
               <!--<a class="read_more" href="#">read more<i class="fa fa-long-arrow-right"></i></a> -->
             </li>
            <li>
               <a class="service_icon" href="#"><i class="fa fa-gears"></i></a>
               <h2>How SMART works?</h2>
-              <p style="text-align:justify">The system adopts a systematic scaffolding approach to develop the taxonomy framework to capture the different types of expert knowledge – declarative, procedural and causal - for knowledge transfer and sharing in using advanced robotic technologies. The taxonomy scaffold assists the experts to capture their expertise of the domain expertise that will then be transferred to and shared with the novices using experiential 3D and Virtual Reality coaching and adaptive learning modules.</p>
+              <p style="text-align:justify">The system adopts a systematic scaffolding approach to develop the taxonomy framework to capture the different types of expert knowledge – declarative, procedural and causal - for knowledge transfer and sharing in using advanced robotic technologies. The taxonomy scaffold assists the experts to capture their expertise of the domain knowledge that will then be transferred to and shared with the novices using experiential 3D and Virtual Reality coaching and adaptive learning modules.</p>
               <!--<a class="read_more" href="#">read more<i class="fa fa-long-arrow-right"></i></a>-->
             </li>
             <li>
               <a class="service_icon" href="#"><i class="fa fa-support"></i></a>
               <h2>Why SMART?</h2>
-              <p style="text-align:justify">The benefits of using this platform are two-fold – first, capturing and storing organizational expertise are important to prevent institutional loss of knowledge from attrition of domain experts; and second, it would increase productivity of novices in operating the robots as they can learn more efficiently online or be coached digitally in operating the complex technologies.</p>
+              <p style="text-align:justify">The benefits of using this platform are: <br>
+                1) To prevent institutional loss of knowledge from attrition of domain experts by capturing their expertise.<br>
+                2) To increase productivity of novices in operating the robots as they can learn more efficiently online or be coached digitally in operating the complex technologies. <br>
+                3) To strengthen enterprise digital capabilities and capacities to utilize deep domain skills.</p>
               <!--<a class="read_more" href="#">read more<i class="fa fa-long-arrow-right"></i></a>-->
             </li>
           </ul>
@@ -180,10 +192,10 @@
                       <!-- Set up your HTML -->
                     <div class="slick_slider">
                       <div class="single_iteam">
-                        <a href="single_page.html"> <img src="img/works_slider1.jpg" alt="img"></a>                          
+                        <a href="single_page.html"> <img src="img/works_slider1.jpg" alt="img"></a>
                       </div>
                       <div class="single_iteam">
-                        <a href="single_page.html"> <img src="img/works_slider2.jpg" alt="img"></a>                          
+                        <a href="single_page.html"> <img src="img/works_slider2.jpg" alt="img"></a>
                       </div>
                     </div>
                   </div>
@@ -237,7 +249,7 @@
   </section>
   <!-- End How it works area -->
 
-  <!-- start Our Team area 
+  <!-- start Our Team area
   <section id="ourTeam">
     <div class="container">
       <div class="row">
@@ -325,7 +337,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 col-md-12 wow bounceInLeft">
-          <p>Pairing substantial savings in time and money with the ease and reliability of doing it in-house, ever since… we invented it</p>
+          <p style="font-size:20px">Pairing substantial savings in time and money with the ease and reliability of doing it in-house, ever since… we invented it</p>
         </div>
       </div>
     </div>
@@ -361,7 +373,7 @@
                 </div>
                 <div class="single_footer_top contact_mail">
                   <h2>Contact us</h2>
-                  <p>We are always open for a quick chat! Give us a call or email us any time and we will respond shortly. <span>+65 11111111</span> or <a href="#">smart@onlysmart.com</a></p>
+                  <p>We are always open for a quick chat! Give us a call or email us any time and we will respond shortly. <span>+65 6419 1209</span> or <a href="#">mtan@ihpc.a-star.edu.sg</a></p>
                 </div>
               </div>
               <div class="col-lg-4 col-md-4 col-sm-4">
@@ -390,7 +402,7 @@
               </div>
             </div>
           </div>
-        </div>        
+        </div>
         <div class="col-lg-12 col-md-12 col-sm-12">
           <div class="footer_bottom">
             <div class="copyright">
@@ -402,7 +414,7 @@
     </div>
   </footer>
   <!-- End footer -->
-  
+
   <script>
   function SetInitialUName()
   {
@@ -410,7 +422,28 @@
 	sessvars.username = 'NotLoggedIn'
 
   }
-  
+
+  </script>
+
+     <script>
+  function RemUsername()
+  {
+	sessvars.username = 'NotLoggedIn'
+  }
+  </script>
+
+    <script>
+  function SelDashboard()
+  {
+	if (sessvars.username=='Mike')
+	{
+		window.location.href="Expert_Dashboard_1.html";
+	}
+  	if (sessvars.username=='John')
+	{
+		window.location.href="Learner_Dashboard.html";
+	}
+  }
   </script>
   
   <!-- jQuery Library -->
@@ -418,7 +451,7 @@
   <!-- For content animatin  -->
   <script src="js/wow.min.js"></script>
   <!-- bootstrap js file -->
-  <script src="js/bootstrap.min.js"></script> 
+  <script src="js/bootstrap.min.js"></script>
   <!-- superslides slider -->
   <script src="js/jquery.easing.1.3.js"></script>
   <script src="js/jquery.animate-enhanced.min.js"></script>
@@ -430,7 +463,7 @@
   <script src="js/jquery.ui.map.js"></script>
 
   <!-- custom js file include -->
-  <script src="js/custom.js"></script>  
-      
+  <script src="js/custom.js"></script>
+
   </body>
 </html>
